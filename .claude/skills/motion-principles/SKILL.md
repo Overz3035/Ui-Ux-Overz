@@ -19,6 +19,8 @@ description: "Motion design foundation - timing, easing, enter/exit patterns, ac
 | Page/route transition | 300-500ms | Establishes spatial narrative |
 | Scroll-driven / 3D | Free (progress-based) | Tied to user input, no fixed duration |
 
+> Scope: these are functional-UI defaults (snappy). Expressive/brand choreography with longer budgets lives in `../motion-design/SKILL.md` — on a marketing moment where they disagree, motion-design wins.
+
 **Frequency rule:** The more often an animation plays, the shorter and subtler it must be.
 A button hover (1000x/day) = 100ms opacity. An onboarding reveal (1x ever) = 600ms+ full choreography.
 
@@ -271,6 +273,7 @@ if (!prefersReduced) {
 | Mobile UX context | `../mobile-principles/SKILL.md` |
 | Desktop UX context | `../desktop-principles/SKILL.md` |
 | GSAP specifics | `../gsap/SKILL.md` |
+| Anime.js specifics | `../animejs/SKILL.md` |
 | Framer Motion specifics | `../framer-motion/SKILL.md` |
 | CSS-only animations | `../css-native/SKILL.md` |
 | Three.js / R3F | `../threejs-r3f/SKILL.md` |

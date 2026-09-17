@@ -30,6 +30,12 @@ REFERENCES/images/
 REFERENCES/videos/
 INDEX/cache/
 
+# ===== Node / npm package =====
+node_modules/
+NPM/payload/
+NPM/*.tgz
+*.tgz
+
 # ===== Python =====
 __pycache__/
 *.py[cod]

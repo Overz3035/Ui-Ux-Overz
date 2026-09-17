@@ -1,10 +1,48 @@
-# UIUX ENGINE
+# UIUX ENGINE ⚡ نصب با یک خط
 
-A portable, reusable **design intelligence engine** — not a template
-generator. It ingests your local reference library (images/videos), turns
-it into inspectable knowledge, generates a unique Design DNA per project,
-routes external resources intelligently, and reviews implementations —
-all locally, with minimal token consumption.
+[![npm version](https://img.shields.io/npm/v/uiux-overz.svg)](https://www.npmjs.com/package/uiux-overz)
+
+۴۶ اسکیل طراحی و موشن برای هر پروژه — بدون GitHub، بدون زیپ، حدود ۷۵۸KB:
+
+```bash
+npx uiux-overz init
+```
+
+همین. اسکیل‌ها می‌آیند توی `.agents/skills/`، بایندر ایجنت، بلاک `AGENTS.md` و پوشه‌ی مدیا ساخته می‌شود. راهنمای کامل: [`NPM/GUIDE.md`](NPM/GUIDE.md).
+
+## عکس و فیلم رو کجا بریزم؟
+
+بعد از `init`، این دو پوشه توی پروژه‌ات هست:
+
+| پوشه | چی بریز |
+|---|---|
+| `INBOX-OverzStyleUIUX/images/` | jpg، png، webp، لوگو، بنر، اسکرین‌شات |
+| `INBOX-OverzStyleUIUX/videos/` | mp4، webm، موشن‌رفرنس |
+
+> پیش‌فرض این‌ها **کامیت نمی‌شوند** (repo سبک می‌ماند). اگر فایلی حتماً باید با سایت برود (مثل `logo.png`)، در `.gitignore` مستثنایش کن:
+>
+> ```
+> !INBOX-OverzStyleUIUX/images/logo.png
+> ```
+
+## ایجنت چطوری صداشون می‌کنه؟
+
+کافیست **با اسم** بگویی — ایجنت خودش مسیر را می‌داند و فایل باینری را داخل چت نمی‌خواند:
+
+- «از `hero.jpg` برای هدر استفاده کن»
+- «رنگ‌بندی دکمه‌ها را از `palette.png` بردار»
+- «انیمیشن ورود را مثل حرکت `intro.mp4` کن»
+
+مثال ارجاع در کد:
+
+```html
+<img src="INBOX-OverzStyleUIUX/images/hero.jpg" alt="hero" />
+```
+
+---
+
+<details>
+<summary>موتور کامل محلی (توسعه‌دهنده‌ها) — برای جزئیات باز کن</summary>
 
 ## Core ideas
 
@@ -88,3 +126,5 @@ classified → inspected → stored → approved before any activation.
 installation · architecture · cli · configuration · ingestion ·
 design-dna · resource routing (ENGINE/resource-router.md) · adapters ·
 troubleshooting · extending — see DOCS/.
+
+</details>

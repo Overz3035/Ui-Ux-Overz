@@ -66,6 +66,7 @@ Walk down; stop at the first that fits.
 | Entry animation on mount, no JS state | **CSS `@starting-style`** |
 | Predetermined motion that must stay smooth while the page is busy loading | **CSS animation** (runs off the main thread) |
 | Programmatic control with CSS performance, no library | **WAAPI** (`element.animate()`) |
+| Stagger grids, SVG draw/morph/motion-path, split-text, scroll-synced tweens | **Anime.js** (see `../animejs/SKILL.md`) |
 | Springs, layout animations, exit animations, gesture-driven values | **Motion** (`motion.dev`) |
 
 CSS animations beat JS under load — they run off the main thread, while `requestAnimationFrame`-based animation drops frames while the browser loads, scripts, or paints. Use CSS for predetermined motion, JS for dynamic and interruptible motion.
@@ -99,7 +100,7 @@ If the task needs a *component* rather than an animation — a toast, a drawer, 
 | Constant motion (marquee, progress) | `linear` |
 | Default | `ease-out` |
 
-**Never `ease-in` on UI.** It starts slow, delaying the exact moment the user is watching. `ease-out` at 200ms *feels* faster than `ease-in` at 200ms.
+**Never `ease-in` on an entrance or on-screen move.** It starts slow, delaying the exact moment the user is watching. `ease-out` at 200ms *feels* faster than `ease-in` at 200ms. Exits are the one exception — an exiting element may use `ease-in` to accelerate away (see `motion-principles`).
 
 Built-in CSS easings are too weak. Use these:
 
@@ -172,7 +173,7 @@ Self-check before you finish. Each of these is an automatic block in `review-ani
 | --- | --- |
 | `transition: all` | Name the exact properties |
 | `transform: scale(0)` entrance | `scale(0.95)` + `opacity: 0` |
-| `ease-in` on a UI element | `ease-out` or a strong custom curve |
+| `ease-in` on an entrance or on-screen move (exits excepted) | `ease-out` or a strong custom curve |
 | Built-in `ease-out` on a deliberate animation | `cubic-bezier(0.23, 1, 0.32, 1)` |
 | Animation on a keyboard shortcut or 100+/day action | No animation |
 | UI duration over 300ms with no reason | 150–250ms |

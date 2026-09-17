@@ -1,0 +1,22 @@
+{
+  "name": "uiux-overz",
+  "version": "1.0.0",
+  "description": "UIUX ENGINE design skills for any project. One command: npx uiux-overz init — vendors 46 motion/design/workflow skills, creates media folders, wires AGENTS.md. No GitHub, no heavy downloads.",
+  "bin": {
+    "uiux-overz": "bin/uiux-overz.js"
+  },
+  "files": [
+    "bin/",
+    "payload/",
+    "templates/",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "node scripts/build-payload.js",
+    "prepack": "npm run build"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "license": "MIT"
+}

@@ -1,5 +1,32 @@
 # SHARING — giving the engine to someone else
 
+Two ways. npm (recommended) or zip (offline).
+
+## npm mode (one command, no GitHub, ~758KB download)
+
+Publish once from this repo (needs an npm account):
+
+```powershell
+cd NPM
+npm login
+npm publish
+```
+
+Friend runs once, inside their project folder:
+
+```bash
+npx uiux-overz init
+```
+
+That vendors all 46 skills (`.agents/skills/`), writes the
+`.claude/skills` + `.kilo/command` bindings, the `AGENTS.md` block,
+`INBOX-OverzStyleUIUX/images/` + `videos/` media folders, and light
+`.gitignore` media rules. Re-run is safe. `--minimal` installs the binder
+only. Payload is built from `.agents/skills/` on `prepack`, so media
+(`INBOX/`, `REFERENCES/`, `INDEX/`) never ships — see `NPM/`.
+
+## Zip mode (offline)
+
 The whole engine is ONE portable folder. No installer, no npm, no registry.
 
 ## The 2-command share

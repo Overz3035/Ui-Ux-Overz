@@ -1,0 +1,6 @@
+
+# uiux-overz managed — project media stays light (edit as needed)
+INBOX-OverzStyleUIUX/videos/*
+INBOX-OverzStyleUIUX/images/*
+!INBOX-OverzStyleUIUX/videos/.gitkeep
+!INBOX-OverzStyleUIUX/images/.gitkeep

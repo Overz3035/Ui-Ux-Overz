@@ -110,6 +110,8 @@ Select ONE archetype per project. Apply consistently.
 
 ## Duration Table
 
+> Scope: expressive/brand budgets — these run longer than functional-UI defaults on purpose. For snappy functional UI (toggles, dropdowns, drawers), use `../motion-principles/SKILL.md` and `../animate/SKILL.md` instead.
+
 | Element Type | Duration | Rationale |
 |-------------|----------|-----------|
 | Tooltip / micro-feedback | 80-120ms | Must feel instant |

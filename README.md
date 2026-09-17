@@ -1,39 +1,39 @@
-# UIUX ENGINE ⚡ نصب با یک خط
+# UIUX ENGINE ⚡ One-Line Install
 
 [![npm version](https://img.shields.io/npm/v/uiux-overz.svg)](https://www.npmjs.com/package/uiux-overz)
 
-۴۶ اسکیل طراحی و موشن برای هر پروژه — بدون GitHub، بدون زیپ، حدود ۷۵۸KB:
+46 design & motion skills for any project — no GitHub cloning, no zip, ~758KB download:
 
 ```bash
 npx uiux-overz init
 ```
 
-همین. اسکیل‌ها می‌آیند توی `.agents/skills/`، بایندر ایجنت، بلاک `AGENTS.md` و پوشه‌ی مدیا ساخته می‌شود. راهنمای کامل: [`NPM/GUIDE.md`](NPM/GUIDE.md).
+That's it. Skills land in `.agents/skills/`, plus the agent binder, the `AGENTS.md` block, and media folders. Full guide: [`NPM/GUIDE.md`](NPM/GUIDE.md).
 
-## عکس و فیلم رو کجا بریزم؟
+## Where do I put images & videos?
 
-بعد از `init`، این دو پوشه توی پروژه‌ات هست:
+After `init`, your project has these two folders:
 
-| پوشه | چی بریز |
+| Folder | Put in |
 |---|---|
-| `INBOX-OverzStyleUIUX/images/` | jpg، png، webp، لوگو، بنر، اسکرین‌شات |
-| `INBOX-OverzStyleUIUX/videos/` | mp4، webm، موشن‌رفرنس |
+| `INBOX-OverzStyleUIUX/images/` | jpg, png, webp, logos, banners, screenshots |
+| `INBOX-OverzStyleUIUX/videos/` | mp4, webm, motion references |
 
-> پیش‌فرض این‌ها **کامیت نمی‌شوند** (repo سبک می‌ماند). اگر فایلی حتماً باید با سایت برود (مثل `logo.png`)، در `.gitignore` مستثنایش کن:
+> By default these are **not committed** (keeps the repo light). If a file must ship with the site (e.g. `logo.png`), allowlist it in `.gitignore`:
 >
 > ```
 > !INBOX-OverzStyleUIUX/images/logo.png
 > ```
 
-## ایجنت چطوری صداشون می‌کنه؟
+## How do agents use them?
 
-کافیست **با اسم** بگویی — ایجنت خودش مسیر را می‌داند و فایل باینری را داخل چت نمی‌خواند:
+Just **name the file** — the agent knows the path and never pastes binaries into chat:
 
-- «از `hero.jpg` برای هدر استفاده کن»
-- «رنگ‌بندی دکمه‌ها را از `palette.png` بردار»
-- «انیمیشن ورود را مثل حرکت `intro.mp4` کن»
+- "Use `hero.jpg` for the header"
+- "Take the button colors from `palette.png`"
+- "Make the entrance move like `intro.mp4`"
 
-مثال ارجاع در کد:
+Reference in code:
 
 ```html
 <img src="INBOX-OverzStyleUIUX/images/hero.jpg" alt="hero" />
@@ -42,7 +42,7 @@ npx uiux-overz init
 ---
 
 <details>
-<summary>موتور کامل محلی (توسعه‌دهنده‌ها) — برای جزئیات باز کن</summary>
+<summary>Full local engine (developers) — click to expand</summary>
 
 ## Core ideas
 

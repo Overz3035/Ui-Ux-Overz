@@ -1,0 +1,4 @@
+interface:
+  display_name: "Aim"
+  short_description: "Clarify the behavior change that defines success"
+  default_prompt: "Use $aim to define the user behavior change this work should produce."

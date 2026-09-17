@@ -1,0 +1,56 @@
+{
+  "id": "source-backgrounds-getlayers-ai-1fde",
+  "label": "videos",
+  "kind": "inferred",
+  "source_confidence": "medium",
+  "inbox_path": "C:\\Users\\SRS\\Desktop\\UIUX_ENGINE\\INBOX\\videos",
+  "counts": {
+    "assets": 4,
+    "images": 0,
+    "videos": 4
+  },
+  "visual_language": [
+    "ui_unknown",
+    "dense_table",
+    "dark_ui",
+    "bento_grid",
+    "split_screen",
+    "minimal_spacious",
+    "light_ui"
+  ],
+  "motion_language": [
+    "background"
+  ],
+  "technology_hints": [],
+  "usage_categories": [],
+  "assets": [
+    {
+      "id": 83,
+      "type": "video",
+      "original_name": "Backgrounds — GetLayers AI.mp4",
+      "generated_name": "motion-background-map-canvas-dark-ui-001.mp4",
+      "reference_path": "C:\\Users\\SRS\\Desktop\\UIUX_ENGINE\\REFERENCES\\videos\\motion-background-map-canvas-dark-ui-001.mp4"
+    },
+    {
+      "id": 84,
+      "type": "video",
+      "original_name": "Backgrounds — GetLayers AI_2.mp4",
+      "generated_name": "motion-background-map-canvas-light-ui-002.mp4",
+      "reference_path": "C:\\Users\\SRS\\Desktop\\UIUX_ENGINE\\REFERENCES\\videos\\motion-background-map-canvas-light-ui-002.mp4"
+    },
+    {
+      "id": 85,
+      "type": "video",
+      "original_name": "Backgrounds — GetLayers AI_3.mp4",
+      "generated_name": "motion-background-map-canvas-dark-ui-003.mp4",
+      "reference_path": "C:\\Users\\SRS\\Desktop\\UIUX_ENGINE\\REFERENCES\\videos\\motion-background-map-canvas-dark-ui-003.mp4"
+    },
+    {
+      "id": 86,
+      "type": "video",
+      "original_name": "Backgrounds — GetLayers AI_4.mp4",
+      "generated_name": "motion-background-map-canvas-minimal-spacious-004.mp4",
+      "reference_path": "C:\\Users\\SRS\\Desktop\\UIUX_ENGINE\\REFERENCES\\videos\\motion-background-map-canvas-minimal-spacious-004.mp4"
+    }
+  ]
+}

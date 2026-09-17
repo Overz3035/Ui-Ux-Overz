@@ -1,0 +1,176 @@
+{
+  "id": "source-scrolltide-cinematic-website-ade7",
+  "label": "videos",
+  "kind": "inferred",
+  "source_confidence": "medium",
+  "inbox_path": "C:\\Users\\SRS\\Desktop\\UIUX_ENGINE\\INBOX\\videos",
+  "counts": {
+    "assets": 21,
+    "images": 0,
+    "videos": 21
+  },
+  "visual_language": [
+    "map_gis",
+    "cinematic",
+    "chat_ai",
+    "dark_ui",
+    "bento_grid",
+    "layout_pattern_unknown",
+    "minimal_spacious",
+    "sidebar_content"
+  ],
+  "motion_language": [
+    "scroll"
+  ],
+  "technology_hints": [],
+  "usage_categories": [],
+  "assets": [
+    {
+      "id": 116,
+      "type": "video",
+      "original_name": "Scrolltide — Cinematic website prompts & templates.webm",
+      "generated_name": "motion-scroll-minimal-spacious-001.webm",
+      "reference_path": "C:\\Users\\SRS\\Desktop\\UIUX_ENGINE\\REFERENCES\\videos\\motion-scroll-minimal-spacious-001.webm"
+    },
+    {
+      "id": 117,
+      "type": "video",
+      "original_name": "Scrolltide — Cinematic website prompts & templates_10.webm",
+      "generated_name": "motion-scroll-sidebar-card-grid-cinematic-002.webm",
+      "reference_path": "C:\\Users\\SRS\\Desktop\\UIUX_ENGINE\\REFERENCES\\videos\\motion-scroll-sidebar-card-grid-cinematic-002.webm"
+    },
+    {
+      "id": 118,
+      "type": "video",
+      "original_name": "Scrolltide — Cinematic website prompts & templates_11.webm",
+      "generated_name": "motion-scroll-card-grid-minimal-spacious-003.webm",
+      "reference_path": "C:\\Users\\SRS\\Desktop\\UIUX_ENGINE\\REFERENCES\\videos\\motion-scroll-card-grid-minimal-spacious-003.webm"
+    },
+    {
+      "id": 119,
+      "type": "video",
+      "original_name": "Scrolltide — Cinematic website prompts & templates_12.webm",
+      "generated_name": "motion-scroll-card-grid-minimal-spacious-004.webm",
+      "reference_path": "C:\\Users\\SRS\\Desktop\\UIUX_ENGINE\\REFERENCES\\videos\\motion-scroll-card-grid-minimal-spacious-004.webm"
+    },
+    {
+      "id": 120,
+      "type": "video",
+      "original_name": "Scrolltide — Cinematic website prompts & templates_13.webm",
+      "generated_name": "motion-scroll-dark-ui-005.webm",
+      "reference_path": "C:\\Users\\SRS\\Desktop\\UIUX_ENGINE\\REFERENCES\\videos\\motion-scroll-dark-ui-005.webm"
+    },
+    {
+      "id": 121,
+      "type": "video",
+      "original_name": "Scrolltide — Cinematic website prompts & templates_14.webm",
+      "generated_name": "motion-scroll-card-grid-cinematic-006.webm",
+      "reference_path": "C:\\Users\\SRS\\Desktop\\UIUX_ENGINE\\REFERENCES\\videos\\motion-scroll-card-grid-cinematic-006.webm"
+    },
+    {
+      "id": 122,
+      "type": "video",
+      "original_name": "Scrolltide — Cinematic website prompts & templates_15.webm",
+      "generated_name": "motion-scroll-card-grid-cinematic-007.webm",
+      "reference_path": "C:\\Users\\SRS\\Desktop\\UIUX_ENGINE\\REFERENCES\\videos\\motion-scroll-card-grid-cinematic-007.webm"
+    },
+    {
+      "id": 123,
+      "type": "video",
+      "original_name": "Scrolltide — Cinematic website prompts & templates_16.webm",
+      "generated_name": "motion-scroll-sidebar-card-grid-data-dense-008.webm",
+      "reference_path": "C:\\Users\\SRS\\Desktop\\UIUX_ENGINE\\REFERENCES\\videos\\motion-scroll-sidebar-card-grid-data-dense-008.webm"
+    },
+    {
+      "id": 124,
+      "type": "video",
+      "original_name": "Scrolltide — Cinematic website prompts & templates_17.webm",
+      "generated_name": "motion-scroll-card-grid-dark-ui-009.webm",
+      "reference_path": "C:\\Users\\SRS\\Desktop\\UIUX_ENGINE\\REFERENCES\\videos\\motion-scroll-card-grid-dark-ui-009.webm"
+    },
+    {
+      "id": 125,
+      "type": "video",
+      "original_name": "Scrolltide — Cinematic website prompts & templates_18.webm",
+      "generated_name": "motion-scroll-sidebar-cinematic-010.webm",
+      "reference_path": "C:\\Users\\SRS\\Desktop\\UIUX_ENGINE\\REFERENCES\\videos\\motion-scroll-sidebar-cinematic-010.webm"
+    },
+    {
+      "id": 126,
+      "type": "video",
+      "original_name": "Scrolltide — Cinematic website prompts & templates_19.webm",
+      "generated_name": "motion-scroll-card-grid-dark-ui-011.webm",
+      "reference_path": "C:\\Users\\SRS\\Desktop\\UIUX_ENGINE\\REFERENCES\\videos\\motion-scroll-card-grid-dark-ui-011.webm"
+    },
+    {
+      "id": 127,
+      "type": "video",
+      "original_name": "Scrolltide — Cinematic website prompts & templates_2.webm",
+      "generated_name": "motion-scroll-dark-ui-012.webm",
+      "reference_path": "C:\\Users\\SRS\\Desktop\\UIUX_ENGINE\\REFERENCES\\videos\\motion-scroll-dark-ui-012.webm"
+    },
+    {
+      "id": 128,
+      "type": "video",
+      "original_name": "Scrolltide — Cinematic website prompts & templates_20.webm",
+      "generated_name": "motion-scroll-card-grid-dark-ui-013.webm",
+      "reference_path": "C:\\Users\\SRS\\Desktop\\UIUX_ENGINE\\REFERENCES\\videos\\motion-scroll-card-grid-dark-ui-013.webm"
+    },
+    {
+      "id": 129,
+      "type": "video",
+      "original_name": "Scrolltide — Cinematic website prompts & templates_21.webm",
+      "generated_name": "motion-scroll-card-grid-dark-ui-014.webm",
+      "reference_path": "C:\\Users\\SRS\\Desktop\\UIUX_ENGINE\\REFERENCES\\videos\\motion-scroll-card-grid-dark-ui-014.webm"
+    },
+    {
+      "id": 130,
+      "type": "video",
+      "original_name": "Scrolltide — Cinematic website prompts & templates_3.webm",
+      "generated_name": "motion-scroll-card-grid-dark-ui-015.webm",
+      "reference_path": "C:\\Users\\SRS\\Desktop\\UIUX_ENGINE\\REFERENCES\\videos\\motion-scroll-card-grid-dark-ui-015.webm"
+    },
+    {
+      "id": 131,
+      "type": "video",
+      "original_name": "Scrolltide — Cinematic website prompts & templates_4.webm",
+      "generated_name": "motion-scroll-card-grid-dark-ui-016.webm",
+      "reference_path": "C:\\Users\\SRS\\Desktop\\UIUX_ENGINE\\REFERENCES\\videos\\motion-scroll-card-grid-dark-ui-016.webm"
+    },
+    {
+      "id": 132,
+      "type": "video",
+      "original_name": "Scrolltide — Cinematic website prompts & templates_5.webm",
+      "generated_name": "motion-scroll-light-ui-017.webm",
+      "reference_path": "C:\\Users\\SRS\\Desktop\\UIUX_ENGINE\\REFERENCES\\videos\\motion-scroll-light-ui-017.webm"
+    },
+    {
+      "id": 133,
+      "type": "video",
+      "original_name": "Scrolltide — Cinematic website prompts & templates_6.webm",
+      "generated_name": "motion-scroll-muted-neutral-018.webm",
+      "reference_path": "C:\\Users\\SRS\\Desktop\\UIUX_ENGINE\\REFERENCES\\videos\\motion-scroll-muted-neutral-018.webm"
+    },
+    {
+      "id": 134,
+      "type": "video",
+      "original_name": "Scrolltide — Cinematic website prompts & templates_7.webm",
+      "generated_name": "motion-scroll-data-dense-019.webm",
+      "reference_path": "C:\\Users\\SRS\\Desktop\\UIUX_ENGINE\\REFERENCES\\videos\\motion-scroll-data-dense-019.webm"
+    },
+    {
+      "id": 135,
+      "type": "video",
+      "original_name": "Scrolltide — Cinematic website prompts & templates_8.webm",
+      "generated_name": "motion-scroll-minimal-spacious-020.webm",
+      "reference_path": "C:\\Users\\SRS\\Desktop\\UIUX_ENGINE\\REFERENCES\\videos\\motion-scroll-minimal-spacious-020.webm"
+    },
+    {
+      "id": 136,
+      "type": "video",
+      "original_name": "Scrolltide — Cinematic website prompts & templates_9.webm",
+      "generated_name": "motion-scroll-card-grid-dark-ui-021.webm",
+      "reference_path": "C:\\Users\\SRS\\Desktop\\UIUX_ENGINE\\REFERENCES\\videos\\motion-scroll-card-grid-dark-ui-021.webm"
+    }
+  ]
+}

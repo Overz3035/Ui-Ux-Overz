@@ -1,0 +1,168 @@
+# UIUX ENGINE — default configuration
+# Copy of this file lives at CONFIG/config.yaml (user-editable).
+# This file is the reference baseline and should not be edited.
+# Every path is RELATIVE to the engine root, unless it starts with a drive
+# letter or "/". Never put absolute paths here if you want portability.
+
+engine:
+  name: UIUX ENGINE
+  # "strict"  -> refuse to run analyzers whose tools are missing
+  # "adaptive"-> degrade gracefully, record capability gaps in metadata
+  mode: adaptive
+
+paths:
+  inbox: INBOX
+  sources: SOURCES
+  references: REFERENCES
+  index: INDEX
+  knowledge: KNOWLEDGE
+  engine_docs: ENGINE
+  skills: SKILLS
+  prompts: PROMPTS
+  workflows: WORKFLOWS
+  modules: MODULES
+  adapters: ADAPTERS
+  db: INDEX/uiux.db
+  embeddings: INDEX/embeddings
+  cache: INDEX/cache
+
+ingest:
+  # File types the pipeline accepts.
+  image_extensions: [".png", ".jpg", ".jpeg", ".webp", ".gif", ".bmp", ".tiff", ".avif"]
+  video_extensions: [".mp4", ".webm", ".mov", ".m4v", ".mkv", ".avi", ".gif"]
+  # Originals are NEVER deleted or moved. Choose how REFERENCES/ is populated:
+  # "hardlink" (cheapest, same volume), "copy", "symlink", "none" (index in place)
+  materialize: hardlink
+  # Skip files larger than this (MB). 0 = no limit.
+  max_file_mb: 0
+  # Recurse into unknown subfolders of INBOX and treat them as sources.
+  auto_source_from_folder: true
+  # Infer source groups for loose assets from filename stems.
+  infer_source_from_filename: true
+  # Minimum assets sharing a stem before a soft source group is proposed.
+  infer_source_min_assets: 2
+  # Write generated names into REFERENCES/. Originals keep their name in INBOX.
+  rename: true
+  workers: 0            # 0 = auto (cpu_count - 1, min 1)
+
+image_analysis:
+  # Longest edge used for feature extraction. Full res is never loaded twice.
+  work_size: 512
+  thumb_size: 320
+  palette_colors: 6
+  # Perceptual hash sizes
+  ahash_bits: 8
+  dhash_bits: 8
+  phash_bits: 8
+  ocr:
+    enabled: auto       # auto | true | false  (auto = use if tesseract found)
+    # Only OCR crops likely to contain text; full-page OCR is slow.
+    max_side: 1600
+    min_confidence: 45
+    languages: ["eng"]
+
+video_analysis:
+  enabled: auto         # auto = enabled when ffprobe is found
+  keyframes: 8          # representative frames sampled per video
+  keyframe_max_side: 640
+  scene_threshold: 0.30 # ffmpeg select='gt(scene,X)'
+  motion_sample_frames: 24
+  max_probe_seconds: 0  # 0 = probe whole file
+  # Extract a contact-sheet per video for fast human review.
+  contact_sheet: true
+
+dedup:
+  # Hamming distance over 64-bit perceptual hashes.
+  exact: true
+  phash_threshold: 6      # <= is "near duplicate"
+  similar_threshold: 14   # <= is "similar"
+  video_threshold: 8      # over aggregated keyframe hashes
+  # Never delete. Only annotate duplicate_of / similar_to / cluster_id.
+  delete_originals: false
+
+cluster:
+  # Agglomerative clustering over visual embeddings.
+  method: auto            # auto | agglomerative | threshold
+  distance: cosine
+  threshold: 0.22
+  min_cluster_size: 2
+
+embeddings:
+  # Providers are resolved in order; the first available wins.
+  # visual-stat  : deterministic local descriptor (PIL+numpy only). Always works.
+  # st-neural    : sentence-transformers text encoder (optional).
+  # clip-torch   : CLIP-style joint encoder via torch (optional).
+  visual_provider: ["visual-stat"]
+  text_provider: ["lexical-concept", "st-neural"]
+  dim_visual: 288
+  normalize: true
+  # Model id used only when a neural provider is active.
+  st_model: "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2"
+
+search:
+  # Fusion weights for hybrid retrieval.
+  weight_lexical: 0.55
+  weight_concept: 0.25
+  weight_visual: 0.20
+  default_limit: 12
+  # Cap on how much reference metadata may reach a language model per task.
+  max_context_references: 12
+  max_context_tokens: 6000
+
+cache:
+  enabled: true
+  # Reanalyze when any of these change: content hash, analyzer version, config
+  # fingerprint of the analyzer section.
+  invalidate_on: ["content_hash", "analyzer_version", "analyzer_config"]
+
+project:
+  # uiux init behaviour
+  context_dir: ".uiux"
+  never_overwrite: true
+  detect:
+    frameworks: true
+    tokens: true
+    components: true
+    styles: true
+
+design:
+  # Number of internal candidate directions generated for complex projects.
+  directions: 3
+  # Minimum WCAG contrast the palette generator must reach before it ships.
+  contrast_body: 4.5
+  contrast_large: 3.0
+  contrast_ui: 3.0
+  # Hard ceiling on motion so "cinematic" never becomes unusable.
+  max_motion_ms: 900
+  respect_reduced_motion: true
+
+resources:
+  registry: CONFIG/resources.yaml
+  # Resource classes the router is allowed to activate automatically.
+  auto_activate: ["skill", "library", "component-source"]
+  # Anything in this list is never auto-suggested.
+  disabled: []
+
+tools:
+  # Leave empty to auto-detect. Set explicitly to pin a binary.
+  ffmpeg: ""
+  ffprobe: ""
+  tesseract: ""
+  # Extra directories to search for the binaries above.
+  search_paths:
+    - "C:/ffmpeg/bin"
+    - "C:/Program Files/ffmpeg/bin"
+    - "C:/Program Files/Tesseract-OCR"
+    - "/usr/local/bin"
+    - "/opt/homebrew/bin"
+
+security:
+  # The engine never fetches or executes remote code as part of a pipeline.
+  allow_network: false
+  # Explicit opt-in required for any command that would reach the internet.
+  allow_remote_resources: false
+
+logging:
+  level: info           # debug | info | warn | error
+  file: INDEX/uiux.log
+  color: auto

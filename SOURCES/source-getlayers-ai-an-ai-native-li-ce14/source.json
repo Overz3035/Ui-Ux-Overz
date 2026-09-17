@@ -1,0 +1,122 @@
+{
+  "id": "source-getlayers-ai-an-ai-native-li-ce14",
+  "label": "videos",
+  "kind": "inferred",
+  "source_confidence": "medium",
+  "inbox_path": "C:\\Users\\SRS\\Desktop\\UIUX_ENGINE\\INBOX\\videos",
+  "counts": {
+    "assets": 13,
+    "images": 0,
+    "videos": 13
+  },
+  "visual_language": [
+    "map_gis",
+    "dark_ui",
+    "bento_grid",
+    "dense_table",
+    "minimal_spacious",
+    "light_ui",
+    "card_grid",
+    "data_dense",
+    "split_screen"
+  ],
+  "motion_language": [
+    "motion_unknown",
+    "scroll"
+  ],
+  "technology_hints": [],
+  "usage_categories": [],
+  "assets": [
+    {
+      "id": 87,
+      "type": "video",
+      "original_name": "GetLayers AI — An AI-native library of templates..mp4",
+      "generated_name": "motion-misc-map-canvas-dark-ui-001.mp4",
+      "reference_path": "C:\\Users\\SRS\\Desktop\\UIUX_ENGINE\\REFERENCES\\videos\\motion-misc-map-canvas-dark-ui-001.mp4"
+    },
+    {
+      "id": 88,
+      "type": "video",
+      "original_name": "GetLayers AI — An AI-native library of templates._10.mp4",
+      "generated_name": "motion-misc-map-canvas-minimal-spacious-002.mp4",
+      "reference_path": "C:\\Users\\SRS\\Desktop\\UIUX_ENGINE\\REFERENCES\\videos\\motion-misc-map-canvas-minimal-spacious-002.mp4"
+    },
+    {
+      "id": 89,
+      "type": "video",
+      "original_name": "GetLayers AI — An AI-native library of templates._11.mp4",
+      "generated_name": "motion-misc-map-canvas-minimal-spacious-003.mp4",
+      "reference_path": "C:\\Users\\SRS\\Desktop\\UIUX_ENGINE\\REFERENCES\\videos\\motion-misc-map-canvas-minimal-spacious-003.mp4"
+    },
+    {
+      "id": 90,
+      "type": "video",
+      "original_name": "GetLayers AI — An AI-native library of templates._12.mp4",
+      "generated_name": "motion-misc-map-canvas-data-dense-004.mp4",
+      "reference_path": "C:\\Users\\SRS\\Desktop\\UIUX_ENGINE\\REFERENCES\\videos\\motion-misc-map-canvas-data-dense-004.mp4"
+    },
+    {
+      "id": 91,
+      "type": "video",
+      "original_name": "GetLayers AI — An AI-native library of templates._13.mp4",
+      "generated_name": "motion-misc-map-canvas-dark-ui-005.mp4",
+      "reference_path": "C:\\Users\\SRS\\Desktop\\UIUX_ENGINE\\REFERENCES\\videos\\motion-misc-map-canvas-dark-ui-005.mp4"
+    },
+    {
+      "id": 92,
+      "type": "video",
+      "original_name": "GetLayers AI — An AI-native library of templates._2.mp4",
+      "generated_name": "motion-misc-map-canvas-dark-ui-006.mp4",
+      "reference_path": "C:\\Users\\SRS\\Desktop\\UIUX_ENGINE\\REFERENCES\\videos\\motion-misc-map-canvas-dark-ui-006.mp4"
+    },
+    {
+      "id": 93,
+      "type": "video",
+      "original_name": "GetLayers AI — An AI-native library of templates._3.mp4",
+      "generated_name": "motion-misc-map-canvas-light-ui-007.mp4",
+      "reference_path": "C:\\Users\\SRS\\Desktop\\UIUX_ENGINE\\REFERENCES\\videos\\motion-misc-map-canvas-light-ui-007.mp4"
+    },
+    {
+      "id": 94,
+      "type": "video",
+      "original_name": "GetLayers AI — An AI-native library of templates._4.mp4",
+      "generated_name": "motion-misc-map-canvas-dark-ui-008.mp4",
+      "reference_path": "C:\\Users\\SRS\\Desktop\\UIUX_ENGINE\\REFERENCES\\videos\\motion-misc-map-canvas-dark-ui-008.mp4"
+    },
+    {
+      "id": 95,
+      "type": "video",
+      "original_name": "GetLayers AI — An AI-native library of templates._5.mp4",
+      "generated_name": "motion-misc-map-canvas-data-dense-009.mp4",
+      "reference_path": "C:\\Users\\SRS\\Desktop\\UIUX_ENGINE\\REFERENCES\\videos\\motion-misc-map-canvas-data-dense-009.mp4"
+    },
+    {
+      "id": 96,
+      "type": "video",
+      "original_name": "GetLayers AI — An AI-native library of templates._6.mp4",
+      "generated_name": "motion-misc-map-canvas-minimal-spacious-010.mp4",
+      "reference_path": "C:\\Users\\SRS\\Desktop\\UIUX_ENGINE\\REFERENCES\\videos\\motion-misc-map-canvas-minimal-spacious-010.mp4"
+    },
+    {
+      "id": 97,
+      "type": "video",
+      "original_name": "GetLayers AI — An AI-native library of templates._7.mp4",
+      "generated_name": "motion-misc-map-canvas-light-ui-011.mp4",
+      "reference_path": "C:\\Users\\SRS\\Desktop\\UIUX_ENGINE\\REFERENCES\\videos\\motion-misc-map-canvas-light-ui-011.mp4"
+    },
+    {
+      "id": 98,
+      "type": "video",
+      "original_name": "GetLayers AI — An AI-native library of templates._8.mp4",
+      "generated_name": "motion-misc-map-canvas-dark-ui-012.mp4",
+      "reference_path": "C:\\Users\\SRS\\Desktop\\UIUX_ENGINE\\REFERENCES\\videos\\motion-misc-map-canvas-dark-ui-012.mp4"
+    },
+    {
+      "id": 99,
+      "type": "video",
+      "original_name": "GetLayers AI — An AI-native library of templates._9.mp4",
+      "generated_name": "motion-misc-map-canvas-organic-soft-013.mp4",
+      "reference_path": "C:\\Users\\SRS\\Desktop\\UIUX_ENGINE\\REFERENCES\\videos\\motion-misc-map-canvas-organic-soft-013.mp4"
+    }
+  ]
+}

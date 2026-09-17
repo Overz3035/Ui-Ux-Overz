@@ -1,0 +1,4 @@
+interface:
+  display_name: "Salvage"
+  short_description: "Extract learning before restarting drifting work"
+  default_prompt: "Use $salvage to preserve what we learned from this drifting approach before restarting."

@@ -1,0 +1,58 @@
+# ===== Media - عکس و فیلم (حجم بالا، ارسال نشود) =====
+*.jpg
+*.jpeg
+*.png
+*.gif
+*.bmp
+*.webp
+*.svg
+*.ico
+*.tif
+*.tiff
+*.heic
+*.heif
+
+*.mp4
+*.webm
+*.mov
+*.avi
+*.mkv
+*.flv
+*.wmv
+*.m4v
+*.mpg
+*.mpeg
+
+# پوشه‌های مدیا و کش (در صورت وجود)
+INBOX/images/
+INBOX/videos/
+REFERENCES/images/
+REFERENCES/videos/
+INDEX/cache/
+
+# ===== Python =====
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# ===== OS / Editor =====
+.DS_Store
+Thumbs.db
+Desktop.ini
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# ===== Logs & DB =====
+*.log
+*.db
+*.sqlite
+*.sqlite3
+
+# ===== Node (اگر بعداً اضافه شد) =====
+node_modules/
+dist/
+build/

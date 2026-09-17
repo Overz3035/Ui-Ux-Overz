@@ -1,0 +1,86 @@
+{
+  "id": "source-3d-scenes-getlayers-ai-7146",
+  "label": "videos",
+  "kind": "inferred",
+  "source_confidence": "medium",
+  "inbox_path": "C:\\Users\\SRS\\Desktop\\UIUX_ENGINE\\INBOX\\videos",
+  "counts": {
+    "assets": 8,
+    "images": 0,
+    "videos": 8
+  },
+  "visual_language": [
+    "three_d_scene",
+    "dark_ui",
+    "minimal_spacious",
+    "sidebar_content",
+    "dense_table",
+    "card_grid",
+    "bento_grid",
+    "vivid_saturated",
+    "full_bleed_media"
+  ],
+  "motion_language": [
+    "three_d"
+  ],
+  "technology_hints": [],
+  "usage_categories": [],
+  "assets": [
+    {
+      "id": 75,
+      "type": "video",
+      "original_name": "3D Scenes — GetLayers AI.mp4",
+      "generated_name": "motion-three-d-map-canvas-minimal-spacious-001.mp4",
+      "reference_path": "C:\\Users\\SRS\\Desktop\\UIUX_ENGINE\\REFERENCES\\videos\\motion-three-d-map-canvas-minimal-spacious-001.mp4"
+    },
+    {
+      "id": 76,
+      "type": "video",
+      "original_name": "3D Scenes — GetLayers AI_2.mp4",
+      "generated_name": "motion-three-d-map-canvas-minimal-spacious-002.mp4",
+      "reference_path": "C:\\Users\\SRS\\Desktop\\UIUX_ENGINE\\REFERENCES\\videos\\motion-three-d-map-canvas-minimal-spacious-002.mp4"
+    },
+    {
+      "id": 77,
+      "type": "video",
+      "original_name": "3D Scenes — GetLayers AI_3.mp4",
+      "generated_name": "motion-three-d-map-canvas-dark-ui-003.mp4",
+      "reference_path": "C:\\Users\\SRS\\Desktop\\UIUX_ENGINE\\REFERENCES\\videos\\motion-three-d-map-canvas-dark-ui-003.mp4"
+    },
+    {
+      "id": 78,
+      "type": "video",
+      "original_name": "3D Scenes — GetLayers AI_4.mp4",
+      "generated_name": "motion-three-d-map-canvas-minimal-spacious-004.mp4",
+      "reference_path": "C:\\Users\\SRS\\Desktop\\UIUX_ENGINE\\REFERENCES\\videos\\motion-three-d-map-canvas-minimal-spacious-004.mp4"
+    },
+    {
+      "id": 79,
+      "type": "video",
+      "original_name": "3D Scenes — GetLayers AI_5.mp4",
+      "generated_name": "motion-three-d-map-canvas-dark-ui-005.mp4",
+      "reference_path": "C:\\Users\\SRS\\Desktop\\UIUX_ENGINE\\REFERENCES\\videos\\motion-three-d-map-canvas-dark-ui-005.mp4"
+    },
+    {
+      "id": 80,
+      "type": "video",
+      "original_name": "3D Scenes — GetLayers AI_6.mp4",
+      "generated_name": "motion-three-d-map-canvas-minimal-spacious-006.mp4",
+      "reference_path": "C:\\Users\\SRS\\Desktop\\UIUX_ENGINE\\REFERENCES\\videos\\motion-three-d-map-canvas-minimal-spacious-006.mp4"
+    },
+    {
+      "id": 81,
+      "type": "video",
+      "original_name": "3D Scenes — GetLayers AI_7.mp4",
+      "generated_name": "motion-three-d-map-canvas-minimal-spacious-007.mp4",
+      "reference_path": "C:\\Users\\SRS\\Desktop\\UIUX_ENGINE\\REFERENCES\\videos\\motion-three-d-map-canvas-minimal-spacious-007.mp4"
+    },
+    {
+      "id": 82,
+      "type": "video",
+      "original_name": "3D Scenes — GetLayers AI_8.mp4",
+      "generated_name": "motion-three-d-map-canvas-dark-ui-008.mp4",
+      "reference_path": "C:\\Users\\SRS\\Desktop\\UIUX_ENGINE\\REFERENCES\\videos\\motion-three-d-map-canvas-dark-ui-008.mp4"
+    }
+  ]
+}

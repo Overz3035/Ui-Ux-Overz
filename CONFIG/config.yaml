@@ -1,0 +1,25 @@
+# UIUX ENGINE — user configuration
+#
+# Only override what you need. Anything omitted here falls back to
+# CONFIG/config.default.yaml. Keys are merged deeply.
+#
+# Detected on this machine at build time:
+#   ffmpeg/ffprobe : C:/ffmpeg/bin  (not on PATH -> pinned below)
+#   tesseract      : not found      (OCR degrades to a text-presence heuristic)
+#   torch/faiss    : installed
+#   transformers   : installed but broken (huggingface-hub 1.x conflict)
+#                    -> neural embedding provider stays off, lexical is used
+
+engine:
+  mode: adaptive
+
+tools:
+  ffmpeg: "C:/ffmpeg/bin/ffmpeg.exe"
+  ffprobe: "C:/ffmpeg/bin/ffprobe.exe"
+
+embeddings:
+  visual_provider: ["visual-stat"]
+  text_provider: ["lexical-concept"]
+
+logging:
+  level: info

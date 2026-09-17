@@ -1,0 +1,4 @@
+interface:
+  display_name: "Problem Weave"
+  short_description: "Interweave frames and wire next steps"
+  default_prompt: "Use $problem-weave to map the problem across layers, build independent S&T trees, reconcile overlap and opposition, and prepare record/plan follow-ups."

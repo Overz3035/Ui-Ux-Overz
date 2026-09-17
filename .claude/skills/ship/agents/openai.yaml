@@ -1,0 +1,4 @@
+interface:
+  display_name: "Ship"
+  short_description: "Deliver completed work to users"
+  default_prompt: "Use $ship to map and complete the path from finished code to a working user installation."

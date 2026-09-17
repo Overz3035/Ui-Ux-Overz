@@ -1,0 +1,43 @@
+{
+  "id": "source-sections-getlayers-ai-0ba1",
+  "label": "videos",
+  "kind": "inferred",
+  "source_confidence": "medium",
+  "inbox_path": "C:\\Users\\SRS\\Desktop\\UIUX_ENGINE\\INBOX\\videos",
+  "counts": {
+    "assets": 2,
+    "images": 0,
+    "videos": 2
+  },
+  "visual_language": [
+    "component",
+    "visual_style_unknown",
+    "sidebar_content",
+    "minimal_spacious",
+    "dense_table",
+    "dark_ui",
+    "bento_grid"
+  ],
+  "motion_language": [
+    "scroll",
+    "motion_unknown"
+  ],
+  "technology_hints": [],
+  "usage_categories": [],
+  "assets": [
+    {
+      "id": 137,
+      "type": "video",
+      "original_name": "Sections — GetLayers AI.mp4",
+      "generated_name": "motion-misc-map-canvas-minimal-spacious-029.mp4",
+      "reference_path": "C:\\Users\\SRS\\Desktop\\UIUX_ENGINE\\REFERENCES\\videos\\motion-misc-map-canvas-minimal-spacious-029.mp4"
+    },
+    {
+      "id": 138,
+      "type": "video",
+      "original_name": "Sections — GetLayers AI_2.mp4",
+      "generated_name": "motion-misc-map-canvas-030.mp4",
+      "reference_path": "C:\\Users\\SRS\\Desktop\\UIUX_ENGINE\\REFERENCES\\videos\\motion-misc-map-canvas-030.mp4"
+    }
+  ]
+}

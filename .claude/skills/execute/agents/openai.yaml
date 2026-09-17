@@ -1,0 +1,4 @@
+interface:
+  display_name: "Execute"
+  short_description: "Build the chosen solution and detect drift"
+  default_prompt: "Use $execute to implement the selected solution, verify it, and detect drift from the aim."

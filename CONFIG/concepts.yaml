@@ -1,0 +1,393 @@
+# UIUX ENGINE — semantic concept ontology
+#
+# This powers local semantic search WITHOUT a neural model (§14). A natural
+# language query is tokenised, matched against `aliases`, then expanded into
+# `expands_to` terms which are scored against asset tags in the index.
+#
+# Weights: how strongly an expanded term counts relative to a literal match.
+# Keep 0.3-0.9. A literal tag match always scores 1.0.
+
+version: 1
+
+concepts:
+
+  # ---- QUALITY / PERSONALITY ----------------------------------------------
+  premium:
+    aliases: ["premium", "luxury", "high-end", "upscale", "refined", "polished",
+              "expensive", "sophisticated", "elegant", "boutique"]
+    expands_to:
+      muted_neutral: 0.6
+      high_contrast: 0.4
+      minimal_spacious: 0.7
+      monochrome: 0.5
+      editorial_typographic: 0.5
+      dark_ui: 0.35
+    implies_tokens: ["generous-whitespace", "restrained-palette", "precise-type", "low-motion-intensity"]
+
+  cinematic:
+    aliases: ["cinematic", "filmic", "movie", "trailer", "dramatic", "atmospheric",
+              "moody", "immersive"]
+    expands_to:
+      cinematic: 1.0
+      dark_ui: 0.6
+      gradient_rich: 0.5
+      three_d_scene: 0.5
+      scroll: 0.5
+      parallax: 0.5
+      background: 0.4
+    implies_tokens: ["wide-aspect", "depth-layers", "slow-easing", "dark-surface"]
+
+  minimal:
+    aliases: ["minimal", "minimalist", "clean", "simple", "spacious", "airy",
+              "quiet", "understated", "bare"]
+    expands_to:
+      minimal_spacious: 1.0
+      muted_neutral: 0.6
+      light_ui: 0.4
+      monochrome: 0.5
+      centered_single_column: 0.4
+    implies_tokens: ["few-elements", "large-negative-space", "single-accent"]
+
+  bold:
+    aliases: ["bold", "loud", "punchy", "energetic", "vibrant", "expressive",
+              "playful", "brutalist"]
+    expands_to:
+      vivid_saturated: 0.9
+      high_contrast: 0.8
+      brutalist: 0.7
+      neon_cyber: 0.4
+    implies_tokens: ["oversized-type", "saturated-accent", "hard-edges"]
+
+  industrial:
+    aliases: ["industrial", "enterprise", "engineering", "technical", "operational",
+              "heavy", "manufacturing", "scada", "b2b", "utility", "infrastructure"]
+    expands_to:
+      industrial_technical: 1.0
+      data_dense: 0.8
+      dashboard: 0.7
+      sidebar_content: 0.6
+      dense_table: 0.6
+      muted_neutral: 0.5
+      monochrome: 0.35
+    implies_tokens: ["tabular-numerals", "status-colour-system", "compact-density", "legible-at-distance"]
+
+  trustworthy:
+    aliases: ["trust", "trustworthy", "credible", "secure", "compliant",
+              "institutional", "regulated", "official", "government"]
+    expands_to:
+      light_ui: 0.5
+      muted_neutral: 0.6
+      editorial_typographic: 0.4
+      form: 0.4
+    implies_tokens: ["conservative-palette", "explicit-labels", "visible-affordances", "no-dark-patterns"]
+
+  futuristic:
+    aliases: ["futuristic", "sci-fi", "scifi", "cyber", "hud", "space", "ai",
+              "next-gen", "holographic"]
+    expands_to:
+      neon_cyber: 1.0
+      dark_ui: 0.7
+      three_d_scene: 0.6
+      overlay_hud: 0.7
+      gradient_rich: 0.5
+    implies_tokens: ["glow-accents", "mono-accent-type", "grid-overlays"]
+
+  # ---- DOMAIN / INDUSTRY --------------------------------------------------
+  fintech:
+    aliases: ["fintech", "finance", "financial", "banking", "bank", "payments",
+              "trading", "invest", "wealth", "ledger", "accounting", "treasury"]
+    expands_to:
+      dashboard: 0.9
+      data_dense: 0.8
+      chart: 0.9
+      data_table: 0.8
+      kpi_tile: 0.8
+      muted_neutral: 0.4
+      high_contrast: 0.4
+    implies_tokens: ["tabular-numerals", "signed-value-colour", "precision-alignment", "audit-trail"]
+
+  healthcare:
+    aliases: ["health", "healthcare", "medical", "clinical", "patient", "hospital",
+              "diagnosis", "ehr", "pharma"]
+    expands_to:
+      light_ui: 0.7
+      form: 0.7
+      dense_table: 0.5
+      muted_neutral: 0.5
+    implies_tokens: ["error-prevention", "high-legibility", "calm-palette", "no-ambiguous-icons"]
+
+  ecommerce:
+    aliases: ["ecommerce", "e-commerce", "shop", "store", "retail", "commerce",
+              "marketplace", "cart", "checkout", "catalog"]
+    expands_to:
+      ecommerce: 1.0
+      card_grid: 0.8
+      media: 0.6
+      full_bleed_media: 0.4
+    implies_tokens: ["product-forward-imagery", "price-hierarchy", "persistent-cart"]
+
+  developer_tool:
+    aliases: ["developer", "devtool", "dev tool", "api", "sdk", "cli", "terminal",
+              "code", "engineering tool", "docs", "platform"]
+    expands_to:
+      code_block: 0.9
+      dark_ui: 0.6
+      editorial_typographic: 0.5
+      data_dense: 0.5
+      sidebar_content: 0.6
+    implies_tokens: ["monospace-surface", "copyable-snippets", "keyboard-first", "dense-navigation"]
+
+  ai_product:
+    aliases: ["ai", "llm", "assistant", "agent", "chatbot", "copilot", "genai",
+              "prompt", "model"]
+    expands_to:
+      chat_ai: 1.0
+      gradient_rich: 0.4
+      dark_ui: 0.4
+      minimal_spacious: 0.4
+    implies_tokens: ["streaming-states", "provenance-affordances", "editable-output", "latency-feedback"]
+
+  geospatial:
+    aliases: ["map", "maps", "gis", "geospatial", "terrain", "topographic",
+              "satellite", "logistics", "fleet", "routing", "location"]
+    expands_to:
+      map_gis: 1.0
+      overlay_hud: 0.7
+      dark_ui: 0.5
+      data_dense: 0.5
+    implies_tokens: ["canvas-first-layout", "overlay-panels", "layer-control", "colour-blind-safe-layers"]
+
+  media_entertainment:
+    aliases: ["media", "entertainment", "streaming", "music", "film", "video",
+              "podcast", "gaming", "creator"]
+    expands_to:
+      media_player: 1.0
+      full_bleed_media: 0.7
+      dark_ui: 0.7
+      card_grid: 0.5
+    implies_tokens: ["poster-driven-hierarchy", "dark-surface", "continue-watching-state"]
+
+  # ---- SURFACE TYPE ------------------------------------------------------
+  dashboard:
+    aliases: ["dashboard", "admin", "console", "backoffice", "back office",
+              "control panel", "analytics", "monitoring", "internal tool", "ops"]
+    expands_to:
+      dashboard: 1.0
+      sidebar: 0.8
+      kpi_tile: 0.7
+      chart: 0.7
+      data_table: 0.7
+      sidebar_content: 0.8
+      data_dense: 0.6
+    implies_tokens: ["persistent-nav", "summary-then-detail", "compact-density", "saved-views"]
+
+  landing_page:
+    aliases: ["landing", "landing page", "homepage", "home page", "marketing site",
+              "website", "site", "waitlist", "product page", "microsite"]
+    expands_to:
+      landing: 1.0
+      hero: 0.9
+      full_bleed_media: 0.5
+      scroll: 0.5
+      card_grid: 0.4
+    implies_tokens: ["single-primary-cta", "narrative-order", "social-proof", "fast-first-paint"]
+
+  mobile_app:
+    aliases: ["mobile", "app", "ios", "android", "phone", "handheld", "native app"]
+    expands_to:
+      mobile: 1.0
+      stacked_mobile: 0.9
+      bottom_nav: 0.8
+    implies_tokens: ["thumb-zone-actions", "44px-touch-targets", "one-hand-reachability", "safe-area-insets"]
+
+  data_table_surface:
+    aliases: ["table", "data table", "grid", "records", "list", "inventory",
+              "spreadsheet", "rows"]
+    expands_to:
+      table: 1.0
+      data_table: 1.0
+      dense_table: 0.9
+      data_dense: 0.6
+    implies_tokens: ["sticky-header", "column-alignment-rules", "row-density-toggle", "bulk-selection"]
+
+  form_surface:
+    aliases: ["form", "signup", "sign up", "signin", "sign in", "login", "onboarding",
+              "checkout", "settings", "wizard", "multi-step"]
+    expands_to:
+      form: 1.0
+      form_controls: 1.0
+      centered_single_column: 0.6
+    implies_tokens: ["single-column-fields", "inline-validation", "visible-labels", "explicit-error-recovery"]
+
+  editorial_surface:
+    aliases: ["blog", "article", "editorial", "magazine", "documentation", "docs",
+              "long form", "reading", "content site"]
+    expands_to:
+      editorial: 1.0
+      editorial_typographic: 1.0
+      centered_single_column: 0.7
+      asymmetric_editorial: 0.5
+    implies_tokens: ["measure-60-75ch", "vertical-rhythm", "type-scale-contrast", "anchor-navigation"]
+
+  # ---- MOTION / 3D -------------------------------------------------------
+  motion:
+    aliases: ["motion", "animation", "animated", "interaction", "transition",
+              "micro-interaction", "microinteraction", "choreography"]
+    expands_to:
+      hover: 0.6
+      micro_interaction: 0.7
+      page_transition: 0.6
+      text_animation: 0.5
+      card: 0.4
+    implies_tokens: ["motion-hierarchy", "easing-tokens", "reduced-motion-fallback"]
+
+  scroll_motion:
+    aliases: ["scroll", "scrolling", "scrollytelling", "scroll animation", "sticky",
+              "pinned", "scroll reveal", "reveal on scroll"]
+    expands_to:
+      scroll: 1.0
+      parallax: 0.8
+      page_transition: 0.4
+    implies_tokens: ["scroll-linked-progress", "pin-and-release", "no-scroll-hijack"]
+
+  three_d:
+    aliases: ["3d", "three", "threejs", "three.js", "webgl", "r3f",
+              "react three fiber", "spatial", "volumetric", "model"]
+    expands_to:
+      three_d: 1.0
+      three_d_scene: 1.0
+      shader: 0.6
+    implies_tokens: ["progressive-3d-loading", "static-poster-fallback", "draw-call-budget", "dpr-clamp"]
+
+  shader_visual:
+    aliases: ["shader", "glsl", "gradient mesh", "aurora", "noise", "procedural",
+              "generative background", "shadergradient"]
+    expands_to:
+      shader: 1.0
+      gradient_rich: 0.9
+      background: 0.7
+      liquid: 0.5
+    implies_tokens: ["fps-budget", "pause-when-offscreen", "contrast-safe-overlay"]
+
+  glass_surface:
+    aliases: ["glass", "glassmorphism", "frosted", "liquid glass", "blur",
+              "translucent", "acrylic"]
+    expands_to:
+      glassmorphism: 1.0
+      gradient_rich: 0.5
+      dark_ui: 0.3
+    implies_tokens: ["backdrop-contrast-guard", "blur-cost-budget", "solid-fallback"]
+
+  # ---- STRUCTURE ---------------------------------------------------------
+  navigation:
+    aliases: ["navigation", "nav", "menu", "ia", "information architecture",
+              "wayfinding", "sitemap", "routing"]
+    expands_to:
+      sidebar: 0.8
+      top_nav: 0.8
+      bottom_nav: 0.7
+      navigation: 0.9
+    implies_tokens: ["current-location-indicator", "predictable-back", "max-depth-3"]
+
+  dense:
+    aliases: ["dense", "data dense", "data-dense", "compact", "information dense",
+              "tight", "high density", "power user"]
+    expands_to:
+      data_dense: 1.0
+      dense_table: 0.8
+      dashboard: 0.5
+    implies_tokens: ["compact-density", "reduced-line-height", "keyboard-shortcuts", "no-decorative-padding"]
+
+  accessible:
+    aliases: ["accessible", "accessibility", "a11y", "wcag", "screen reader",
+              "keyboard", "contrast", "inclusive"]
+    expands_to: {}
+    implies_tokens: ["wcag-aa-minimum", "visible-focus-ring", "semantic-landmarks", "no-colour-only-meaning"]
+
+# ---------------------------------------------------------------------------
+# Stopwords removed before concept matching.
+# ---------------------------------------------------------------------------
+stopwords: ["a", "an", "the", "for", "with", "and", "or", "of", "to", "in", "on",
+            "at", "by", "is", "are", "be", "that", "this", "it", "as", "from",
+            "make", "create", "build", "design", "want", "need", "like", "some",
+            "very", "more", "most", "please", "should", "would", "can", "using",
+            "use", "my", "our", "your", "me", "i", "we", "you", "new", "project"]
+
+# ---------------------------------------------------------------------------
+# Industry -> design consequence map used by the Design DNA engine.
+# These are DECISION INPUTS, not visual templates. Two fintech projects with
+# different audiences and brands still diverge.
+# ---------------------------------------------------------------------------
+industry_profiles:
+  fintech:
+    density: high
+    trust: high
+    expressiveness: low
+    motion: restrained
+    data: heavy
+  healthcare:
+    density: medium
+    trust: high
+    expressiveness: low
+    motion: minimal
+    data: heavy
+  developer_tool:
+    density: high
+    trust: medium
+    expressiveness: medium
+    motion: functional
+    data: medium
+  ai_product:
+    density: medium
+    trust: medium
+    expressiveness: medium
+    motion: expressive
+    data: medium
+  ecommerce:
+    density: medium
+    trust: medium
+    expressiveness: high
+    motion: expressive
+    data: light
+  media_entertainment:
+    density: low
+    trust: low
+    expressiveness: high
+    motion: cinematic
+    data: light
+  geospatial:
+    density: high
+    trust: high
+    expressiveness: low
+    motion: functional
+    data: heavy
+  industrial:
+    density: high
+    trust: high
+    expressiveness: low
+    motion: minimal
+    data: heavy
+  education:
+    density: medium
+    trust: medium
+    expressiveness: medium
+    motion: functional
+    data: medium
+  creative_agency:
+    density: low
+    trust: low
+    expressiveness: high
+    motion: cinematic
+    data: light
+  nonprofit:
+    density: low
+    trust: high
+    expressiveness: medium
+    motion: restrained
+    data: light
+  generic:
+    density: medium
+    trust: medium
+    expressiveness: medium
+    motion: functional
+    data: medium

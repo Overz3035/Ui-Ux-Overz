@@ -1,0 +1,247 @@
+[
+  {
+    "id": "source-3d-scenes-getlayers-ai-7146",
+    "label": "videos",
+    "origin_url": null,
+    "inbox_path": "C:\\Users\\SRS\\Desktop\\UIUX_ENGINE\\INBOX\\videos",
+    "kind": "inferred",
+    "source_confidence": "medium",
+    "asset_count": 8,
+    "image_count": 0,
+    "video_count": 8,
+    "visual_language": [
+      "three_d_scene",
+      "dark_ui",
+      "minimal_spacious",
+      "sidebar_content",
+      "dense_table",
+      "card_grid",
+      "bento_grid",
+      "vivid_saturated",
+      "full_bleed_media"
+    ],
+    "motion_language": [
+      "three_d"
+    ],
+    "technology_hints": [],
+    "usage_categories": [],
+    "notes": null,
+    "created_at": "2026-09-04 14:45:13",
+    "updated_at": "2026-09-04 15:26:23"
+  },
+  {
+    "id": "source-backgrounds-getlayers-ai-1fde",
+    "label": "videos",
+    "origin_url": null,
+    "inbox_path": "C:\\Users\\SRS\\Desktop\\UIUX_ENGINE\\INBOX\\videos",
+    "kind": "inferred",
+    "source_confidence": "medium",
+    "asset_count": 4,
+    "image_count": 0,
+    "video_count": 4,
+    "visual_language": [
+      "ui_unknown",
+      "dense_table",
+      "dark_ui",
+      "bento_grid",
+      "split_screen",
+      "minimal_spacious",
+      "light_ui"
+    ],
+    "motion_language": [
+      "background"
+    ],
+    "technology_hints": [],
+    "usage_categories": [],
+    "notes": null,
+    "created_at": "2026-09-04 14:45:13",
+    "updated_at": "2026-09-04 15:26:23"
+  },
+  {
+    "id": "source-getlayers-ai-an-ai-native-li-ce14",
+    "label": "videos",
+    "origin_url": null,
+    "inbox_path": "C:\\Users\\SRS\\Desktop\\UIUX_ENGINE\\INBOX\\videos",
+    "kind": "inferred",
+    "source_confidence": "medium",
+    "asset_count": 13,
+    "image_count": 0,
+    "video_count": 13,
+    "visual_language": [
+      "map_gis",
+      "dark_ui",
+      "bento_grid",
+      "dense_table",
+      "minimal_spacious",
+      "light_ui",
+      "card_grid",
+      "data_dense",
+      "split_screen"
+    ],
+    "motion_language": [
+      "motion_unknown",
+      "scroll"
+    ],
+    "technology_hints": [],
+    "usage_categories": [],
+    "notes": null,
+    "created_at": "2026-09-04 14:45:13",
+    "updated_at": "2026-09-04 15:26:23"
+  },
+  {
+    "id": "source-scrolltide-cinematic-website-ade7",
+    "label": "videos",
+    "origin_url": null,
+    "inbox_path": "C:\\Users\\SRS\\Desktop\\UIUX_ENGINE\\INBOX\\videos",
+    "kind": "inferred",
+    "source_confidence": "medium",
+    "asset_count": 21,
+    "image_count": 0,
+    "video_count": 21,
+    "visual_language": [
+      "map_gis",
+      "cinematic",
+      "chat_ai",
+      "dark_ui",
+      "bento_grid",
+      "layout_pattern_unknown",
+      "minimal_spacious",
+      "sidebar_content"
+    ],
+    "motion_language": [
+      "scroll"
+    ],
+    "technology_hints": [],
+    "usage_categories": [],
+    "notes": null,
+    "created_at": "2026-09-04 14:45:13",
+    "updated_at": "2026-09-04 15:26:23"
+  },
+  {
+    "id": "source-sections-getlayers-ai-0ba1",
+    "label": "videos",
+    "origin_url": null,
+    "inbox_path": "C:\\Users\\SRS\\Desktop\\UIUX_ENGINE\\INBOX\\videos",
+    "kind": "inferred",
+    "source_confidence": "medium",
+    "asset_count": 2,
+    "image_count": 0,
+    "video_count": 2,
+    "visual_language": [
+      "component",
+      "visual_style_unknown",
+      "sidebar_content",
+      "minimal_spacious",
+      "dense_table",
+      "dark_ui",
+      "bento_grid"
+    ],
+    "motion_language": [
+      "scroll",
+      "motion_unknown"
+    ],
+    "technology_hints": [],
+    "usage_categories": [],
+    "notes": null,
+    "created_at": "2026-09-04 14:45:13",
+    "updated_at": "2026-09-04 15:26:23"
+  },
+  {
+    "id": "source-src-ca9e",
+    "label": "images",
+    "origin_url": null,
+    "inbox_path": "C:\\Users\\SRS\\Desktop\\UIUX_ENGINE\\INBOX\\images",
+    "kind": "inferred",
+    "source_confidence": "medium",
+    "asset_count": 0,
+    "image_count": 0,
+    "video_count": 0,
+    "visual_language": [],
+    "motion_language": [],
+    "technology_hints": [],
+    "usage_categories": [],
+    "notes": null,
+    "created_at": "2026-09-04 14:45:12",
+    "updated_at": "2026-09-04 15:26:23"
+  },
+  {
+    "id": "source-templates-getlayers-ai-46fa",
+    "label": "videos",
+    "origin_url": null,
+    "inbox_path": "C:\\Users\\SRS\\Desktop\\UIUX_ENGINE\\INBOX\\videos",
+    "kind": "inferred",
+    "source_confidence": "medium",
+    "asset_count": 8,
+    "image_count": 0,
+    "video_count": 8,
+    "visual_language": [
+      "map_gis",
+      "dark_ui",
+      "sidebar_content",
+      "bento_grid",
+      "data_dense",
+      "vivid_saturated",
+      "monochrome",
+      "minimal_spacious",
+      "layout_pattern_unknown"
+    ],
+    "motion_language": [
+      "motion_unknown",
+      "scroll"
+    ],
+    "technology_hints": [],
+    "usage_categories": [],
+    "notes": null,
+    "created_at": "2026-09-04 14:45:13",
+    "updated_at": "2026-09-04 15:26:23"
+  },
+  {
+    "id": "source-vira-control-mapping-system--2862",
+    "label": "images",
+    "origin_url": null,
+    "inbox_path": "C:\\Users\\SRS\\Desktop\\UIUX_ENGINE\\INBOX\\images",
+    "kind": "inferred",
+    "source_confidence": "medium",
+    "asset_count": 2,
+    "image_count": 2,
+    "video_count": 0,
+    "visual_language": [
+      "map_gis",
+      "layout_pattern_unknown",
+      "dashboard",
+      "vivid_saturated",
+      "visual_style_unknown"
+    ],
+    "motion_language": [],
+    "technology_hints": [],
+    "usage_categories": [],
+    "notes": null,
+    "created_at": "2026-09-04 14:45:13",
+    "updated_at": "2026-09-04 15:26:23"
+  },
+  {
+    "id": "source-vira-control-software-storyb-205f",
+    "label": "images",
+    "origin_url": null,
+    "inbox_path": "C:\\Users\\SRS\\Desktop\\UIUX_ENGINE\\INBOX\\images",
+    "kind": "inferred",
+    "source_confidence": "medium",
+    "asset_count": 2,
+    "image_count": 2,
+    "video_count": 0,
+    "visual_language": [
+      "dashboard",
+      "dark_ui",
+      "presentation",
+      "layout_pattern_unknown",
+      "editorial",
+      "bento_grid"
+    ],
+    "motion_language": [],
+    "technology_hints": [],
+    "usage_categories": [],
+    "notes": null,
+    "created_at": "2026-09-04 14:45:13",
+    "updated_at": "2026-09-04 15:26:23"
+  }
+]

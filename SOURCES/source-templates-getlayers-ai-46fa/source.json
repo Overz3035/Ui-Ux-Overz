@@ -1,0 +1,87 @@
+{
+  "id": "source-templates-getlayers-ai-46fa",
+  "label": "videos",
+  "kind": "inferred",
+  "source_confidence": "medium",
+  "inbox_path": "C:\\Users\\SRS\\Desktop\\UIUX_ENGINE\\INBOX\\videos",
+  "counts": {
+    "assets": 8,
+    "images": 0,
+    "videos": 8
+  },
+  "visual_language": [
+    "map_gis",
+    "dark_ui",
+    "sidebar_content",
+    "bento_grid",
+    "data_dense",
+    "vivid_saturated",
+    "monochrome",
+    "minimal_spacious",
+    "layout_pattern_unknown"
+  ],
+  "motion_language": [
+    "motion_unknown",
+    "scroll"
+  ],
+  "technology_hints": [],
+  "usage_categories": [],
+  "assets": [
+    {
+      "id": 139,
+      "type": "video",
+      "original_name": "Templates — GetLayers AI.mp4",
+      "generated_name": "motion-misc-map-canvas-data-dense-031.mp4",
+      "reference_path": "C:\\Users\\SRS\\Desktop\\UIUX_ENGINE\\REFERENCES\\videos\\motion-misc-map-canvas-data-dense-031.mp4"
+    },
+    {
+      "id": 140,
+      "type": "video",
+      "original_name": "Templates — GetLayers AI_2.mp4",
+      "generated_name": "motion-misc-map-canvas-data-dense-032.mp4",
+      "reference_path": "C:\\Users\\SRS\\Desktop\\UIUX_ENGINE\\REFERENCES\\videos\\motion-misc-map-canvas-data-dense-032.mp4"
+    },
+    {
+      "id": 141,
+      "type": "video",
+      "original_name": "Templates — GetLayers AI_3.mp4",
+      "generated_name": "motion-misc-map-canvas-dark-ui-033.mp4",
+      "reference_path": "C:\\Users\\SRS\\Desktop\\UIUX_ENGINE\\REFERENCES\\videos\\motion-misc-map-canvas-dark-ui-033.mp4"
+    },
+    {
+      "id": 142,
+      "type": "video",
+      "original_name": "Templates — GetLayers AI_4.mp4",
+      "generated_name": "motion-misc-map-canvas-dark-ui-034.mp4",
+      "reference_path": "C:\\Users\\SRS\\Desktop\\UIUX_ENGINE\\REFERENCES\\videos\\motion-misc-map-canvas-dark-ui-034.mp4"
+    },
+    {
+      "id": 143,
+      "type": "video",
+      "original_name": "Templates — GetLayers AI_5.mp4",
+      "generated_name": "motion-misc-map-canvas-dark-ui-035.mp4",
+      "reference_path": "C:\\Users\\SRS\\Desktop\\UIUX_ENGINE\\REFERENCES\\videos\\motion-misc-map-canvas-dark-ui-035.mp4"
+    },
+    {
+      "id": 144,
+      "type": "video",
+      "original_name": "Templates — GetLayers AI_6.mp4",
+      "generated_name": "motion-misc-map-canvas-dark-ui-036.mp4",
+      "reference_path": "C:\\Users\\SRS\\Desktop\\UIUX_ENGINE\\REFERENCES\\videos\\motion-misc-map-canvas-dark-ui-036.mp4"
+    },
+    {
+      "id": 145,
+      "type": "video",
+      "original_name": "Templates — GetLayers AI_7.mp4",
+      "generated_name": "motion-misc-map-canvas-minimal-spacious-037.mp4",
+      "reference_path": "C:\\Users\\SRS\\Desktop\\UIUX_ENGINE\\REFERENCES\\videos\\motion-misc-map-canvas-minimal-spacious-037.mp4"
+    },
+    {
+      "id": 146,
+      "type": "video",
+      "original_name": "Templates — GetLayers AI_8.mp4",
+      "generated_name": "motion-misc-map-canvas-dark-ui-038.mp4",
+      "reference_path": "C:\\Users\\SRS\\Desktop\\UIUX_ENGINE\\REFERENCES\\videos\\motion-misc-map-canvas-dark-ui-038.mp4"
+    }
+  ]
+}

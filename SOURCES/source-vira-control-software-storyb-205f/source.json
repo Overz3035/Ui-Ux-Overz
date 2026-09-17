@@ -1,0 +1,39 @@
+{
+  "id": "source-vira-control-software-storyb-205f",
+  "label": "images",
+  "kind": "inferred",
+  "source_confidence": "medium",
+  "inbox_path": "C:\\Users\\SRS\\Desktop\\UIUX_ENGINE\\INBOX\\images",
+  "counts": {
+    "assets": 2,
+    "images": 2,
+    "videos": 0
+  },
+  "visual_language": [
+    "dashboard",
+    "dark_ui",
+    "presentation",
+    "layout_pattern_unknown",
+    "editorial",
+    "bento_grid"
+  ],
+  "motion_language": [],
+  "technology_hints": [],
+  "usage_categories": [],
+  "assets": [
+    {
+      "id": 71,
+      "type": "image",
+      "original_name": "Vira_Control_software_storyboard…_2K_202609031703.jpeg",
+      "generated_name": "dashboard-dark-ui-014.jpeg",
+      "reference_path": "C:\\Users\\SRS\\Desktop\\UIUX_ENGINE\\REFERENCES\\images\\dashboard-dark-ui-014.jpeg"
+    },
+    {
+      "id": 72,
+      "type": "image",
+      "original_name": "Vira_Control_software_storyboard…_2K_202609031707.jpeg",
+      "generated_name": "dashboard-bento-grid-dark-ui-card-grid-015.jpeg",
+      "reference_path": "C:\\Users\\SRS\\Desktop\\UIUX_ENGINE\\REFERENCES\\images\\dashboard-bento-grid-dark-ui-card-grid-015.jpeg"
+    }
+  ]
+}

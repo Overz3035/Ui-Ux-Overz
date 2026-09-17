@@ -1,0 +1,188 @@
+[
+  {
+    "name": "reduced_motion_fallback",
+    "principle": "Every choreographed effect needs a static, equally complete state.",
+    "use_when": "Always, without exception.",
+    "avoid_when": "Never.",
+    "evidence": 51,
+    "facets": {
+      "motion_category": [
+        "scroll",
+        "parallax",
+        "three_d",
+        "liquid",
+        "shader"
+      ]
+    },
+    "card_path": null,
+    "updated_at": "2026-09-04 14:45:13"
+  },
+  {
+    "name": "scroll_choreography",
+    "principle": "Tie motion to scroll position, never to elapsed time, so users stay in control.",
+    "use_when": "Narrative marketing pages.",
+    "avoid_when": "Task surfaces, long-form reading, low-power devices.",
+    "evidence": 41,
+    "facets": {
+      "motion_category": [
+        "scroll",
+        "parallax"
+      ]
+    },
+    "card_path": null,
+    "updated_at": "2026-09-04 14:45:13"
+  },
+  {
+    "name": "bento_composition",
+    "principle": "Vary tile weight to encode importance while keeping a single grid rhythm.",
+    "use_when": "Feature overviews, capability summaries.",
+    "avoid_when": "Ordered/sequential content, or when tiles have equal weight.",
+    "evidence": 29,
+    "facets": {
+      "layout_pattern": [
+        "bento_grid"
+      ]
+    },
+    "card_path": null,
+    "updated_at": "2026-09-04 14:45:13"
+  },
+  {
+    "name": "persistent_sidebar",
+    "principle": "Keep global navigation always reachable when users pivot between many peer sections.",
+    "use_when": "5+ top-level destinations, repeat-visit tooling, desktop-first workflow.",
+    "avoid_when": "Marketing pages, <=4 destinations, mobile-primary audiences.",
+    "evidence": 15,
+    "facets": {
+      "layout_pattern": [
+        "sidebar_content"
+      ]
+    },
+    "card_path": null,
+    "updated_at": "2026-09-04 14:45:13"
+  },
+  {
+    "name": "three_d_product_focus",
+    "principle": "3D earns its cost only when rotation/inspection is the message.",
+    "use_when": "Physical products, spatial data, configurators.",
+    "avoid_when": "Decorating a page that could ship as an image.",
+    "evidence": 10,
+    "facets": {
+      "motion_category": [
+        "three_d"
+      ]
+    },
+    "card_path": null,
+    "updated_at": "2026-09-04 14:45:13"
+  },
+  {
+    "name": "dense_data_table",
+    "principle": "Maximise scannable rows per viewport; align numerals right, use tabular figures.",
+    "use_when": "Comparison and scanning across many records is the primary job.",
+    "avoid_when": "Fewer than ~8 records, or the record itself is the destination.",
+    "evidence": 4,
+    "facets": {
+      "ui_category": [
+        "table",
+        "dashboard"
+      ],
+      "visual_style": [
+        "data_dense"
+      ]
+    },
+    "card_path": null,
+    "updated_at": "2026-09-04 14:45:13"
+  },
+  {
+    "name": "ambient_shader_background",
+    "principle": "Keep ambient motion below conscious attention: low contrast, low velocity, pausable.",
+    "use_when": "Brand surfaces needing depth without content competition.",
+    "avoid_when": "Text-heavy or data-heavy regions; battery-constrained contexts.",
+    "evidence": 0,
+    "facets": {
+      "motion_category": [
+        "shader",
+        "background"
+      ],
+      "visual_style": [
+        "gradient_rich"
+      ]
+    },
+    "card_path": null,
+    "updated_at": "2026-09-04 14:45:13"
+  },
+  {
+    "name": "bottom_tab_navigation",
+    "principle": "Put 3-5 primary destinations inside thumb reach.",
+    "use_when": "Mobile app-like surfaces with flat IA.",
+    "avoid_when": "Deep hierarchies, desktop layouts.",
+    "evidence": 0,
+    "facets": {
+      "component_category": [
+        "bottom_nav"
+      ]
+    },
+    "card_path": null,
+    "updated_at": "2026-09-04 14:45:13"
+  },
+  {
+    "name": "hero_value_proposition",
+    "principle": "One claim, one proof, one action; everything else is below the fold.",
+    "use_when": "First-touch marketing surfaces.",
+    "avoid_when": "Authenticated product surfaces.",
+    "evidence": 0,
+    "facets": {
+      "ui_category": [
+        "landing"
+      ],
+      "component_category": [
+        "hero"
+      ]
+    },
+    "card_path": null,
+    "updated_at": "2026-09-04 14:45:13"
+  },
+  {
+    "name": "kpi_summary_row",
+    "principle": "Answer 'is anything wrong?' above the fold before offering detail.",
+    "use_when": "Monitoring and operational dashboards.",
+    "avoid_when": "Exploratory analytics where no single metric is canonical.",
+    "evidence": 0,
+    "facets": {
+      "component_category": [
+        "kpi_tile",
+        "chart"
+      ]
+    },
+    "card_path": null,
+    "updated_at": "2026-09-04 14:45:13"
+  },
+  {
+    "name": "progressive_disclosure",
+    "principle": "Reveal depth on demand so the default view stays legible.",
+    "use_when": "Complex records with rarely-needed fields.",
+    "avoid_when": "Users need side-by-side comparison of the hidden fields.",
+    "evidence": 0,
+    "facets": {
+      "component_category": [
+        "modal",
+        "timeline"
+      ]
+    },
+    "card_path": null,
+    "updated_at": "2026-09-04 14:45:13"
+  },
+  {
+    "name": "subtle_hover_elevation",
+    "principle": "Confirm affordance with the smallest perceivable change (<=4px, <=150ms).",
+    "use_when": "Any pointer-driven interactive surface.",
+    "avoid_when": "Touch-only contexts, where hover never fires.",
+    "evidence": 0,
+    "facets": {
+      "motion_category": [
+        "hover"
+      ]
+    },
+    "card_path": null,
+    "updated_at": "2026-09-04 14:45:13"
+  }
+]

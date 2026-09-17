@@ -1,0 +1,4 @@
+interface:
+  display_name: "Review"
+  short_description: "Check alignment and drift before committing"
+  default_prompt: "Use $review to check this work against its aim, detect drift, and decide whether to continue or adjust."

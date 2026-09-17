@@ -1,0 +1,4 @@
+interface:
+  display_name: "Solution Space"
+  short_description: "Compare candidate solutions before committing"
+  default_prompt: "Use $solution-space to compare materially different approaches and select one with explicit trade-offs."

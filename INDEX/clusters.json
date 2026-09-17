@@ -1,0 +1,443 @@
+[
+  {
+    "id": 20,
+    "label": "dark_ui",
+    "size": 13,
+    "centroid": [],
+    "dominant": [
+      "dark_ui",
+      "style:dark_ui"
+    ],
+    "created_at": "2026-09-04 15:26:23",
+    "members": [
+      1,
+      2,
+      3,
+      10,
+      14,
+      16,
+      17,
+      19,
+      33,
+      35,
+      37,
+      73,
+      74
+    ]
+  },
+  {
+    "id": 5,
+    "label": "dark_ui-editorial-sidebar_content",
+    "size": 12,
+    "centroid": [],
+    "dominant": [
+      "dark_ui",
+      "editorial",
+      "style:dark_ui",
+      "ui:editorial",
+      "layout:sidebar_content",
+      "sidebar_content"
+    ],
+    "created_at": "2026-09-04 15:26:23",
+    "members": [
+      8,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      31,
+      32
+    ]
+  },
+  {
+    "id": 18,
+    "label": "bento_grid-chat_ai-cinematic",
+    "size": 9,
+    "centroid": [],
+    "dominant": [
+      "bento_grid",
+      "chat_ai",
+      "cinematic",
+      "component:card_grid",
+      "layout:bento_grid",
+      "map_gis"
+    ],
+    "created_at": "2026-09-04 15:26:23",
+    "members": [
+      118,
+      121,
+      122,
+      124,
+      126,
+      128,
+      129,
+      130,
+      136
+    ]
+  },
+  {
+    "id": 4,
+    "label": "bento_grid-map_canvas-dark_ui",
+    "size": 7,
+    "centroid": [],
+    "dominant": [
+      "bento_grid",
+      "component:map_canvas",
+      "dark_ui",
+      "layout:bento_grid",
+      "map_gis",
+      "style:dark_ui"
+    ],
+    "created_at": "2026-09-04 15:26:23",
+    "members": [
+      88,
+      89,
+      92,
+      94,
+      96,
+      140,
+      141
+    ]
+  },
+  {
+    "id": 15,
+    "label": "chat_ai-cinematic-dark_ui",
+    "size": 7,
+    "centroid": [],
+    "dominant": [
+      "chat_ai",
+      "cinematic",
+      "dark_ui",
+      "map_gis",
+      "motion:scroll",
+      "scroll"
+    ],
+    "created_at": "2026-09-04 15:26:23",
+    "members": [
+      116,
+      119,
+      120,
+      127,
+      131,
+      134,
+      135
+    ]
+  },
+  {
+    "id": 9,
+    "label": "dark_ui-stacked_mobile-mobile",
+    "size": 6,
+    "centroid": [],
+    "dominant": [
+      "dark_ui",
+      "layout:stacked_mobile",
+      "mobile",
+      "stacked_mobile",
+      "style:dark_ui",
+      "ui:mobile"
+    ],
+    "created_at": "2026-09-04 15:26:23",
+    "members": [
+      51,
+      54,
+      56,
+      57,
+      58,
+      149
+    ]
+  },
+  {
+    "id": 10,
+    "label": "high_contrast-stacked_mobile-mobile",
+    "size": 6,
+    "centroid": [],
+    "dominant": [
+      "high_contrast",
+      "layout:stacked_mobile",
+      "mobile",
+      "stacked_mobile",
+      "style:high_contrast",
+      "ui:mobile"
+    ],
+    "created_at": "2026-09-04 15:26:23",
+    "members": [
+      60,
+      61,
+      62,
+      63,
+      64,
+      65
+    ]
+  },
+  {
+    "id": 16,
+    "label": "stacked_mobile-mobile-scroll",
+    "size": 6,
+    "centroid": [],
+    "dominant": [
+      "layout:stacked_mobile",
+      "mobile",
+      "motion:scroll",
+      "scroll",
+      "social",
+      "stacked_mobile"
+    ],
+    "created_at": "2026-09-04 15:26:23",
+    "members": [
+      104,
+      105,
+      107,
+      110,
+      112,
+      115
+    ]
+  },
+  {
+    "id": 1,
+    "label": "card_grid-dark_ui-dashboard",
+    "size": 5,
+    "centroid": [],
+    "dominant": [
+      "card_grid",
+      "dark_ui",
+      "dashboard",
+      "layout:card_grid",
+      "style:dark_ui",
+      "ui:dashboard"
+    ],
+    "created_at": "2026-09-04 15:26:23",
+    "members": [
+      5,
+      7,
+      34,
+      42,
+      66
+    ]
+  },
+  {
+    "id": 7,
+    "label": "dark_ui-dense_table-dashboard",
+    "size": 5,
+    "centroid": [],
+    "dominant": [
+      "dark_ui",
+      "dense_table",
+      "layout:dense_table",
+      "style:dark_ui",
+      "dashboard",
+      "ui:dashboard"
+    ],
+    "created_at": "2026-09-04 15:26:23",
+    "members": [
+      6,
+      12,
+      43,
+      45,
+      70
+    ]
+  },
+  {
+    "id": 8,
+    "label": "bottom_nav-dark_ui-stacked_mobile",
+    "size": 5,
+    "centroid": [],
+    "dominant": [
+      "component:bottom_nav",
+      "dark_ui",
+      "layout:stacked_mobile",
+      "mobile",
+      "stacked_mobile",
+      "style:dark_ui"
+    ],
+    "created_at": "2026-09-04 15:26:23",
+    "members": [
+      52,
+      55,
+      103,
+      108,
+      147
+    ]
+  },
+  {
+    "id": 11,
+    "label": "map_canvas-dark_ui-sidebar_content",
+    "size": 5,
+    "centroid": [],
+    "dominant": [
+      "component:map_canvas",
+      "dark_ui",
+      "layout:sidebar_content",
+      "map_gis",
+      "sidebar_content",
+      "style:dark_ui"
+    ],
+    "created_at": "2026-09-04 15:26:23",
+    "members": [
+      91,
+      139,
+      142,
+      143,
+      146
+    ]
+  },
+  {
+    "id": 14,
+    "label": "card_grid-dark_ui-three_d",
+    "size": 4,
+    "centroid": [],
+    "dominant": [
+      "card_grid",
+      "dark_ui",
+      "layout:card_grid",
+      "motion:three_d",
+      "style:dark_ui",
+      "three_d"
+    ],
+    "created_at": "2026-09-04 15:26:23",
+    "members": [
+      75,
+      77,
+      102,
+      148
+    ]
+  },
+  {
+    "id": 17,
+    "label": "chat_ai-cinematic-sidebar",
+    "size": 3,
+    "centroid": [],
+    "dominant": [
+      "chat_ai",
+      "cinematic",
+      "component:sidebar",
+      "layout:sidebar_content",
+      "map_gis",
+      "motion:scroll"
+    ],
+    "created_at": "2026-09-04 15:26:23",
+    "members": [
+      117,
+      123,
+      125
+    ]
+  },
+  {
+    "id": 2,
+    "label": "map_canvas-dashboard-map_gis",
+    "size": 2,
+    "centroid": [],
+    "dominant": [
+      "component:map_canvas",
+      "dashboard",
+      "map_gis",
+      "ui:dashboard",
+      "ui:map_gis",
+      "style:vivid_saturated"
+    ],
+    "created_at": "2026-09-04 15:26:23",
+    "members": [
+      68,
+      69
+    ]
+  },
+  {
+    "id": 3,
+    "label": "map_canvas-dark_ui-dashboard",
+    "size": 2,
+    "centroid": [],
+    "dominant": [
+      "component:map_canvas",
+      "dark_ui",
+      "dashboard",
+      "map_gis",
+      "style:dark_ui",
+      "ui:dashboard"
+    ],
+    "created_at": "2026-09-04 15:26:23",
+    "members": [
+      48,
+      67
+    ]
+  },
+  {
+    "id": 6,
+    "label": "bento_grid-card_grid-dark_ui",
+    "size": 2,
+    "centroid": [],
+    "dominant": [
+      "bento_grid",
+      "component:card_grid",
+      "dark_ui",
+      "landing",
+      "layout:bento_grid",
+      "muted_neutral"
+    ],
+    "created_at": "2026-09-04 15:26:23",
+    "members": [
+      4,
+      100
+    ]
+  },
+  {
+    "id": 12,
+    "label": "map_canvas-dark_ui-dense_table",
+    "size": 2,
+    "centroid": [],
+    "dominant": [
+      "component:map_canvas",
+      "dark_ui",
+      "dense_table",
+      "layout:dense_table",
+      "minimal_spacious",
+      "motion:three_d"
+    ],
+    "created_at": "2026-09-04 15:26:23",
+    "members": [
+      78,
+      81
+    ]
+  },
+  {
+    "id": 13,
+    "label": "map_canvas-dark_ui-sidebar_content",
+    "size": 2,
+    "centroid": [],
+    "dominant": [
+      "component:map_canvas",
+      "dark_ui",
+      "layout:sidebar_content",
+      "motion:three_d",
+      "sidebar_content",
+      "style:dark_ui"
+    ],
+    "created_at": "2026-09-04 15:26:23",
+    "members": [
+      80,
+      82
+    ]
+  },
+  {
+    "id": 19,
+    "label": "dark_ui-dashboard-data_dense",
+    "size": 2,
+    "centroid": [],
+    "dominant": [
+      "dark_ui",
+      "dashboard",
+      "data_dense",
+      "style:dark_ui",
+      "style:data_dense",
+      "ui:dashboard"
+    ],
+    "created_at": "2026-09-04 15:26:23",
+    "members": [
+      11,
+      13
+    ]
+  }
+]

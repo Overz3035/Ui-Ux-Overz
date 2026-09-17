@@ -1,0 +1,383 @@
+# UIUX ENGINE — classification taxonomy
+#
+# This file drives local (non-LLM) classification. It is intentionally
+# rule-based and inspectable: every tag the engine attaches to an asset can be
+# traced back to a rule here. Edit it to teach the engine your vocabulary.
+#
+# Rule fields:
+#   any / all / none : filename + OCR keyword matchers (lowercased substrings)
+#   when             : numeric feature predicates, e.g. "aspect > 1.6"
+#   score            : contribution when the rule fires (default 1.0)
+#
+# Available numeric features for `when`:
+#   width height aspect megapixels brightness contrast saturation
+#   edge_density text_density colorfulness dark_ratio light_ratio
+#   hue_spread unique_colors vertical_structure horizontal_structure
+#   corner_radius_hint grid_score panel_score
+
+version: 1
+
+# ---------------------------------------------------------------------------
+# UI CATEGORY — what kind of screen/artifact is this
+# ---------------------------------------------------------------------------
+ui_category:
+  dashboard:
+    - any: ["dashboard", "analytics", "admin", "console", "control", "metrics",
+            "kpi", "overview", "monitor", "telemetry", "ops"]
+      score: 2.0
+    - when: "aspect > 1.4 and panel_score > 0.50 and text_density > 0.09"
+      score: 1.4
+    - when: "grid_score > 0.32 and aspect > 1.5"
+      score: 0.8
+  landing:
+    - any: ["landing", "hero", "homepage", "home page", "marketing", "startup",
+            "saas", "product page", "waitlist", "get started", "pricing"]
+      score: 2.0
+    - when: "aspect > 1.5 and text_density < 0.07 and edge_density < 0.20"
+      score: 1.2
+  mobile:
+    - any: ["mobile", "ios", "android", "app screen", "screenshot_2", "phone"]
+      score: 1.2
+    - when: "aspect < 0.75"
+      score: 2.2
+  table:
+    - any: ["table", "grid view", "data table", "rows", "spreadsheet", "list view",
+            "ledger", "records"]
+      score: 2.0
+    - when: "horizontal_structure > 0.50 and text_density > 0.11"
+      score: 1.5
+  form:
+    - any: ["form", "sign in", "signin", "log in", "login", "signup", "sign up",
+            "register", "checkout", "settings", "profile", "password", "onboarding"]
+      score: 2.0
+    - when: "vertical_structure > 0.45 and aspect < 1.2 and text_density > 0.07"
+      score: 0.9
+  editorial:
+    - any: ["article", "blog", "editorial", "magazine", "essay", "docs",
+            "documentation", "read", "story", "journal"]
+      score: 2.0
+    - when: "text_density > 0.13 and colorfulness < 0.25"
+      score: 1.1
+  ecommerce:
+    - any: ["shop", "store", "product", "cart", "checkout", "price", "buy",
+            "catalog", "collection", "add to bag"]
+      score: 2.0
+  map_gis:
+    - any: ["map", "gis", "topograph", "terrain", "geospatial", "satellite",
+            "route", "coordinates", "lat", "lon"]
+      score: 2.2
+  chat_ai:
+    - any: ["chat", "assistant", "chatgpt", "claude", "copilot", "prompt",
+            "conversation", "agent", "llm", "gpt"]
+      score: 2.0
+  media_player:
+    - any: ["player", "video", "youtube", "playlist", "watch", "episode", "stream"]
+      score: 1.6
+  social:
+    - any: ["instagram", "twitter", "feed", "post", "profile", "follower",
+            "reel", "tiktok", "linkedin"]
+      score: 1.8
+  three_d_scene:
+    - any: ["3d", "three.js", "threejs", "webgl", "shader", "render", "scene",
+            "orrery", "particle"]
+      score: 2.0
+    - when: "colorfulness > 0.34 and panel_score < 0.40 and text_density < 0.05"
+      score: 1.0
+  component:
+    - any: ["button", "card", "input", "badge", "toggle", "dropdown", "modal",
+            "tooltip", "menu", "tab", "accordion", "slider", "avatar", "chip"]
+      score: 1.8
+    - when: "megapixels < 0.30"
+      score: 1.0
+  presentation:
+    - any: ["storyboard", "slide", "deck", "scene1", "scene2", "scene3", "keynote"]
+      score: 1.6
+  unknown: []
+
+# ---------------------------------------------------------------------------
+# COMPONENT CATEGORY — which building blocks are visible
+# ---------------------------------------------------------------------------
+component_category:
+  sidebar:
+    - any: ["sidebar", "side nav", "rail", "drawer"]
+      score: 1.8
+    - when: "vertical_structure > 0.42 and aspect > 1.5"
+      score: 1.2
+  top_nav:
+    - any: ["navbar", "top nav", "header", "menu bar"]
+      score: 1.6
+    - when: "aspect > 1.6 and horizontal_structure > 0.42"
+      score: 0.6
+  bottom_nav:
+    - any: ["bottom nav", "tab bar", "tabbar"]
+      score: 1.8
+    - when: "aspect < 0.7"
+      score: 0.5
+  data_table:
+    - any: ["table", "rows", "columns", "sortable"]
+      score: 1.6
+  chart:
+    - any: ["chart", "graph", "plot", "trend", "sparkline", "bar", "line chart",
+            "donut", "gauge", "histogram"]
+      score: 1.8
+  kpi_tile:
+    - any: ["kpi", "stat", "metric", "total", "revenue", "%"]
+      score: 1.2
+  card_grid:
+    - any: ["card", "tile", "gallery", "grid"]
+      score: 1.2
+    - when: "grid_score > 0.34"
+      score: 1.2
+  hero:
+    - any: ["hero", "headline", "above the fold"]
+      score: 1.6
+  modal:
+    - any: ["modal", "dialog", "popup", "sheet", "overlay"]
+      score: 1.6
+  form_controls:
+    - any: ["input", "field", "select", "checkbox", "radio", "textarea",
+            "submit", "label", "placeholder"]
+      score: 1.4
+  timeline:
+    - any: ["timeline", "activity", "history", "log", "audit"]
+      score: 1.4
+  map_canvas:
+    - any: ["map", "gis", "terrain", "layer"]
+      score: 1.6
+  media:
+    - any: ["image", "video", "thumbnail", "cover", "poster"]
+      score: 0.8
+  code_block:
+    - any: ["code", "snippet", "terminal", "json", "npm", "const ", "function "]
+      score: 1.6
+
+# ---------------------------------------------------------------------------
+# VISUAL STYLE — the surface language
+# ---------------------------------------------------------------------------
+visual_style:
+  dark_ui:
+    - when: "dark_ratio > 0.55"
+      score: 2.0
+  light_ui:
+    - when: "light_ratio > 0.55"
+      score: 2.0
+  high_contrast:
+    - when: "contrast > 0.26"
+      score: 1.4
+  muted_neutral:
+    - when: "saturation < 0.18 and colorfulness < 0.22"
+      score: 1.6
+  vivid_saturated:
+    - when: "saturation > 0.45 and colorfulness > 0.40"
+      score: 1.6
+  monochrome:
+    - when: "hue_spread < 0.12 and unique_colors < 0.35"
+      score: 1.8
+  gradient_rich:
+    - any: ["gradient", "mesh", "aurora", "glow"]
+      score: 1.2
+    - when: "hue_spread > 0.38 and panel_score < 0.42"
+      score: 1.4
+  glassmorphism:
+    - any: ["glass", "frosted", "blur", "liquid glass", "acrylic"]
+      score: 1.8
+  brutalist:
+    - any: ["brutalist", "raw", "swiss", "grotesk"]
+      score: 1.6
+    - when: "contrast > 0.28 and corner_radius_hint < 0.45 and colorfulness < 0.22"
+      score: 1.0
+  editorial_typographic:
+    - when: "text_density > 0.12 and panel_score > 0.45"
+      score: 1.2
+  data_dense:
+    - when: "text_density > 0.11 and panel_score > 0.50"
+      score: 1.6
+  minimal_spacious:
+    - when: "text_density < 0.05 and edge_density < 0.16"
+      score: 1.6
+  cinematic:
+    - any: ["cinematic", "film", "grain", "letterbox", "trailer"]
+      score: 1.6
+    - when: "aspect > 1.95 and dark_ratio > 0.5"
+      score: 1.2
+  neon_cyber:
+    - any: ["neon", "cyber", "hud", "sci-fi", "scifi"]
+      score: 1.6
+    - when: "dark_ratio > 0.55 and saturation > 0.45"
+      score: 1.0
+  industrial_technical:
+    - any: ["industrial", "engineering", "schematic", "blueprint", "cad",
+            "scada", "control room", "instrument"]
+      score: 1.8
+  organic_soft:
+    - when: "corner_radius_hint > 0.80 and saturation < 0.35 and contrast < 0.22"
+      score: 1.2
+
+# ---------------------------------------------------------------------------
+# LAYOUT PATTERN
+# ---------------------------------------------------------------------------
+layout_pattern:
+  sidebar_content:
+    - when: "vertical_structure > 0.40 and aspect > 1.4"
+      score: 1.8
+  centered_single_column:
+    - when: "vertical_structure < 0.20 and aspect < 1.4"
+      score: 1.4
+  split_screen:
+    - when: "vertical_structure > 0.55"
+      score: 1.2
+    - any: ["split", "two column", "side by side"]
+      score: 1.4
+  bento_grid:
+    - any: ["bento"]
+      score: 2.0
+    - when: "grid_score > 0.38 and panel_score > 0.55"
+      score: 1.4
+  card_grid:
+    - when: "grid_score > 0.30"
+      score: 1.0
+  asymmetric_editorial:
+    - any: ["asymmetric", "editorial", "offset"]
+      score: 1.6
+  full_bleed_media:
+    - when: "text_density < 0.04 and panel_score < 0.45"
+      score: 1.2
+  dense_table:
+    - when: "horizontal_structure > 0.48"
+      score: 1.4
+  stacked_mobile:
+    - when: "aspect < 0.75"
+      score: 1.8
+  overlay_hud:
+    - any: ["hud", "overlay", "reticle", "crosshair"]
+      score: 1.6
+
+# ---------------------------------------------------------------------------
+# MOTION CATEGORY — for video assets (§10 of the build spec)
+# ---------------------------------------------------------------------------
+motion_category:
+  hover:
+    - any: ["hover", "mouseover", "cursor over"]
+      score: 2.0
+  scroll:
+    - any: ["scroll", "scrolly", "scrolltide", "sticky"]
+      score: 2.0
+    - when: "vertical_flow > 0.55"
+      score: 1.4
+  parallax:
+    - any: ["parallax", "depth"]
+      score: 2.0
+    - when: "layered_motion > 0.5 and vertical_flow > 0.4"
+      score: 1.2
+  page_transition:
+    - any: ["transition", "page change", "route", "wipe", "curtain"]
+      score: 1.8
+    - when: "scene_cuts > 2 and duration < 12"
+      score: 1.0
+  navigation:
+    - any: ["nav", "menu open", "drawer", "hamburger"]
+      score: 1.8
+  card:
+    - any: ["card"]
+      score: 1.4
+  button:
+    - any: ["button", "cta", "click"]
+      score: 1.4
+  cursor:
+    - any: ["cursor", "pointer", "magnetic"]
+      score: 1.8
+  micro_interaction:
+    - any: ["micro", "toggle", "switch", "checkbox", "like", "ripple"]
+      score: 1.8
+    - when: "duration < 4 and motion_energy < 0.25"
+      score: 1.0
+  loading:
+    - any: ["loader", "loading", "spinner", "skeleton", "progress"]
+      score: 2.0
+  hero:
+    - any: ["hero", "intro", "opening"]
+      score: 1.4
+  three_d:
+    - any: ["3d", "three.js", "threejs", "webgl", "orrery", "model", "camera"]
+      score: 2.0
+  shader:
+    - any: ["shader", "glsl", "noise", "displacement", "raymarch"]
+      score: 2.0
+  liquid:
+    - any: ["liquid", "fluid", "metaball", "goo", "blob"]
+      score: 2.0
+  text_animation:
+    - any: ["text", "typography", "kinetic", "split text", "typewriter", "marquee"]
+      score: 1.8
+  background:
+    - any: ["background", "ambient", "backdrop", "gradient"]
+      score: 1.6
+    - when: "motion_energy < 0.18 and scene_cuts < 1"
+      score: 1.0
+  misc: []
+
+# ---------------------------------------------------------------------------
+# DESIGN PATTERNS — reusable, transferable knowledge (§15)
+# These become KNOWLEDGE/ cards, not visual templates.
+# ---------------------------------------------------------------------------
+design_patterns:
+  persistent_sidebar:
+    requires: {layout_pattern: [sidebar_content]}
+    principle: "Keep global navigation always reachable when users pivot between many peer sections."
+    use_when: "5+ top-level destinations, repeat-visit tooling, desktop-first workflow."
+    avoid_when: "Marketing pages, <=4 destinations, mobile-primary audiences."
+  dense_data_table:
+    requires: {ui_category: [table, dashboard], visual_style: [data_dense]}
+    principle: "Maximise scannable rows per viewport; align numerals right, use tabular figures."
+    use_when: "Comparison and scanning across many records is the primary job."
+    avoid_when: "Fewer than ~8 records, or the record itself is the destination."
+  kpi_summary_row:
+    requires: {component_category: [kpi_tile, chart]}
+    principle: "Answer 'is anything wrong?' above the fold before offering detail."
+    use_when: "Monitoring and operational dashboards."
+    avoid_when: "Exploratory analytics where no single metric is canonical."
+  progressive_disclosure:
+    requires: {component_category: [modal, timeline]}
+    principle: "Reveal depth on demand so the default view stays legible."
+    use_when: "Complex records with rarely-needed fields."
+    avoid_when: "Users need side-by-side comparison of the hidden fields."
+  hero_value_proposition:
+    requires: {ui_category: [landing], component_category: [hero]}
+    principle: "One claim, one proof, one action; everything else is below the fold."
+    use_when: "First-touch marketing surfaces."
+    avoid_when: "Authenticated product surfaces."
+  bento_composition:
+    requires: {layout_pattern: [bento_grid]}
+    principle: "Vary tile weight to encode importance while keeping a single grid rhythm."
+    use_when: "Feature overviews, capability summaries."
+    avoid_when: "Ordered/sequential content, or when tiles have equal weight."
+  bottom_tab_navigation:
+    requires: {component_category: [bottom_nav]}
+    principle: "Put 3-5 primary destinations inside thumb reach."
+    use_when: "Mobile app-like surfaces with flat IA."
+    avoid_when: "Deep hierarchies, desktop layouts."
+  subtle_hover_elevation:
+    requires: {motion_category: [hover]}
+    principle: "Confirm affordance with the smallest perceivable change (<=4px, <=150ms)."
+    use_when: "Any pointer-driven interactive surface."
+    avoid_when: "Touch-only contexts, where hover never fires."
+  scroll_choreography:
+    requires: {motion_category: [scroll, parallax]}
+    principle: "Tie motion to scroll position, never to elapsed time, so users stay in control."
+    use_when: "Narrative marketing pages."
+    avoid_when: "Task surfaces, long-form reading, low-power devices."
+  reduced_motion_fallback:
+    requires: {motion_category: [scroll, parallax, three_d, liquid, shader]}
+    principle: "Every choreographed effect needs a static, equally complete state."
+    use_when: "Always, without exception."
+    avoid_when: "Never."
+  ambient_shader_background:
+    requires: {motion_category: [shader, background], visual_style: [gradient_rich]}
+    principle: "Keep ambient motion below conscious attention: low contrast, low velocity, pausable."
+    use_when: "Brand surfaces needing depth without content competition."
+    avoid_when: "Text-heavy or data-heavy regions; battery-constrained contexts."
+  three_d_product_focus:
+    requires: {motion_category: [three_d]}
+    principle: "3D earns its cost only when rotation/inspection is the message."
+    use_when: "Physical products, spatial data, configurators."
+    avoid_when: "Decorating a page that could ship as an image."

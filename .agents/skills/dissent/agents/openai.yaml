@@ -1,0 +1,4 @@
+interface:
+  display_name: "Dissent"
+  short_description: "Stress-test a decision with structured dissent"
+  default_prompt: "Use $dissent to challenge this decision, surface hidden assumptions, and recommend whether to proceed."

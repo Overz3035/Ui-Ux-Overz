@@ -1,0 +1,679 @@
+# UIUX ENGINE — RESOURCE REGISTRY
+#
+# Machine-readable classification of every entry in RESOURCE-LIST.md.
+# The Resource Router (ENGINE/resource-router.md) reads this file to decide
+# what to activate for a task. `uiux doctor` reads it to report what is
+# actually installed.
+#
+# CONFIDENCE VOCABULARY — do not upgrade these without evidence:
+#   verified-local      : presence confirmed on this machine by `uiux doctor`
+#   high-confidence     : widely documented public project, stable API surface
+#   needs-verification  : plausibly exists, capabilities NOT confirmed
+#   unknown             : identity itself unresolved; router must not act on it
+#
+# `class` maps to RESOURCE-LIST.md §9:
+#   active-engine | skill | library | component-source | inspiration
+#   knowledge-tool | engineering-resource
+#
+# `activation` tells the router how the resource may be used:
+#   invoke      : has an executable/native interface; call it
+#   load        : markdown/knowledge; progressively load into context
+#   depend      : a code dependency the implementation may install
+#   consult     : reference material a human/agent reads, never auto-installed
+#   concept     : ideas only; the engine reimplements them internally
+
+version: 1
+
+# ===========================================================================
+# 1. ACTIVE ENGINES  (route work to them; preserve native behaviour)
+# ===========================================================================
+active_engines:
+
+  ui-ux-pro-max:
+    display_name: "UI UX Pro Max"
+    class: active-engine
+    priority: CRITICAL
+    activation: invoke
+    confidence: verified-local            # native CLI verified working 2026-09
+    installed: false            # updated by `uiux doctor` (live probe wins)
+    notes: >
+      RESOURCE-LIST.md designates this the primary external design
+      intelligence engine. NOT present on this machine as of engine build
+      (probed ~/.claude/skills, ~/.claude/plugins, PATH, npm global).
+      Its native command surface is therefore UNKNOWN and must not be
+      guessed. ADAPTERS/ui-ux-pro-max/ performs runtime detection and
+      degrades to the engine's internal design pipeline when absent.
+    detection:
+      # Each probe is tried in order; first hit wins. See adapters.py.
+      - {kind: claude_skill,   name: "ui-ux-pro-max"}
+      - {kind: claude_skill,   name: "uiux-pro-max"}
+      - {kind: claude_skill,   name: "ui_ux_pro_max"}
+      - {kind: claude_plugin,  name: "ui-ux-pro-max"}
+      - {kind: path_binary,    name: "uiuxpromax"}
+      - {kind: path_binary,    name: "ui-ux-pro-max"}
+      - {kind: npm_global,     name: "ui-ux-pro-max"}
+      - {kind: env_var,        name: "UI_UX_PRO_MAX_HOME"}
+      - {kind: directory,      name: "ADAPTERS/ui-ux-pro-max/vendor"}
+    routes:
+      # Task kinds the router hands over WHEN detected.
+      - design-system-generation
+      - ui-ux-audit
+      - product-design-guidance
+      - component-spec
+    fallback: "ENGINE/design-dna-engine.md + ENGINE/quality-engine.md"
+
+# ===========================================================================
+# 2. SKILLS  (methodology / knowledge; progressive load)
+# ===========================================================================
+skills:
+
+  frontend-design:
+    display_name: "Frontend Design"
+    class: skill
+    priority: HIGH
+    activation: load
+    confidence: verified-local
+    installed: true
+    notes: >
+      Installed 2026-09 from anthropics/skills (official, 853K installs via
+      skills.sh) into ~/.kilo/skills and ~/.agents/skills. Used for
+      translating design decisions into production frontend: component
+      architecture, layout, responsive implementation.
+    detection:
+      - {kind: claude_skill, name: "frontend-design"}
+      - {kind: claude_skill, name: "anthropic-skills:frontend-design"}
+    routes: [implementation, component-architecture, responsive-implementation]
+
+  taste:
+    display_name: "Taste Skill"
+    class: skill
+    priority: HIGH
+    activation: load
+    confidence: verified-local
+    installed: true
+    notes: >
+      Installed 2026-09 from leonxlnx/taste-skill@design-taste-frontend
+      (442K installs via skills.sh) into ~/.kilo/skills and ~/.agents/skills.
+      Covers visual direction, composition, typography, colour
+      relationships, hierarchy, avoiding generic AI-looking UI. The internal
+      card KNOWLEDGE/principles/taste-and-visual-quality.md remains as a
+      checklist alongside it.
+    detection:
+      - {kind: claude_skill, name: "design-taste-frontend"}
+      - {kind: claude_skill, name: "taste"}
+      - {kind: claude_skill, name: "design-taste"}
+    routes: [visual-direction, composition, typography, colour-relationships]
+    fallback: "KNOWLEDGE/principles/taste-and-visual-quality.md"
+
+  motion-design:
+    display_name: "Motion Design Skill"
+    class: skill
+    priority: HIGH
+    activation: load
+    confidence: verified-local
+    installed: true
+    notes: >
+      Installed 2026-09 from lottiefiles/motion-design-skill@motion-design
+      (official LottieFiles, ~11K installs via skills.sh) into ~/.kilo/skills
+      and ~/.agents/skills. Covers animation principles, timing, easing,
+      micro-interactions, transitions. ENGINE/motion-engine.md remains the
+      binding contract for tokens and reduced-motion.
+    detection:
+      - {kind: claude_skill, name: "motion-design"}
+      - {kind: claude_skill, name: "motion"}
+    routes: [motion-spec, easing, micro-interactions, transitions]
+    fallback: "ENGINE/motion-engine.md"
+
+  web-design-guidelines:
+    display_name: "Web Design Guidelines (Vercel)"
+    class: skill
+    priority: HIGH
+    activation: load
+    confidence: verified-local
+    installed: true
+    notes: >
+      Installed 2026-09 from vercel-labs/agent-skills@web-design-guidelines
+      (607K installs via skills.sh) into ~/.kilo/skills and ~/.agents/skills.
+      Production web interface guidelines: performance, a11y, UX patterns.
+      Consult during implementation and review.
+    detection:
+      - {kind: claude_skill, name: "web-design-guidelines"}
+    routes: [implementation, review, performance, accessibility]
+
+  emil-kowalski:
+    display_name: "Emil Kowalski — Skills for Designers and Engineers"
+    class: skill
+    priority: HIGH
+    activation: load
+    confidence: verified-local            # identified + installed 2026-09
+    site: "https://github.com/emilkowalski/skills"
+    install: "npx skills add emilkowalski/skills"
+    verified: >
+      2026-09: RESOURCE-LIST §7 "Emily Kowalski" resolved by the requester
+      to github.com/emilkowalski/skills - 'Skills For Designers and
+      Engineers' by Emil Kowalski (ex-Vercel/Linear), MIT, ~35.3k stars,
+      11 skills. INSTALLED globally (~/.kilo/skills, ~/.agents/skills,
+      ~/.claude/skills). Key skills: emil-design-eng (animation + design
+      judgment), animate / animate-expo (curve, duration, properties from
+      scratch), review-animations (strict animation review),
+      improve-animations (codebase audit -> prioritized plans),
+      find-animation-opportunities, animation-vocabulary, apple-design
+      (Apple HIG motion distilled for web), pick-ui-library, prototype,
+      ask-sonner, write-swift.
+    detection:
+      - {kind: claude_skill, name: "emil-design-eng"}
+      - {kind: claude_skill, name: "animate"}
+      - {kind: claude_skill, name: "review-animations"}
+    installed: true
+    routes: [motion-spec, animation-review, animation-implementation,
+             visual-direction, easing, micro-interactions]
+    note: >
+      Outranks the internal motion card for craft judgement (priority 10
+      over 9); ENGINE/motion-engine.md stays the binding contract for
+      tokens and reduced-motion (priority 9).
+
+  genjutsu:
+    display_name: "Genjutsu (AThevon) — creative coding orchestrators"
+    class: skill
+    priority: HIGH
+    activation: load
+    confidence: verified-local            # identified + installed 2026-09
+    installed: true
+    repo: "https://github.com/AThevon/genjutsu"
+    site: "https://genjutsu.athevon.dev"
+    install: "npx skills add AThevon/genjutsu  |  or Claude plugin: /plugin marketplace add AThevon/genjutsu"
+    verified: >
+      2026-09: RESOURCE-LIST §1 'Genjutsu' resolved by the requester to
+      github.com/AThevon/genjutsu - 'The art of illusion. Cast motion.
+      Paint signatures.' Creative coding skills for Claude, MIT, ~321
+      stars. Two orchestrators: /cast (The Illusionist: scan stack ->
+      interaction thesis -> load sub-skills -> implement -> mini-audit,
+      for motion/interaction requests) and /paint (The Master Painter:
+      brainstorm -> visual thesis -> design system MASTER.md ->
+      implement -> full audit, for from-scratch design systems). 15
+      sub-skills across web (gsap, framer-motion, css-native, threejs-r3f,
+      canvas-generative), Android Compose, and SwiftUI/Metal. INSTALLED
+      globally via the skills CLI (~/.kilo/skills etc.) - the cast/paint/
+      motion-principles/design-audit/gsap/framer-motion/threejs-r3f/
+      canvas-generative sub-skills are present.
+    detection:
+      - {kind: claude_skill, name: "cast"}
+      - {kind: claude_skill, name: "paint"}
+      - {kind: claude_skill, name: "genjutsu"}
+    routes: [motion-implementation, creative-interaction-thesis,
+             design-system-from-scratch, scroll-choreography, 3d-scenes]
+    note: >
+      Route to /cast for 'animate X', 'make Y feel physical' requests and
+      /paint for from-scratch visual universes. Relationship to this
+      engine: genjutsu/paint's MASTER.md and this engine's design-dna.md
+      solve the same problem - when the engine generated a DNA first
+      (priority 9), feed it to the pipeline instead of a second
+      brainstorm; genjutsu even vendors ui-ux-pro-max as a sub-skill, so
+      double-invoke of that dataset is redundant.
+
+  graphify:
+    display_name: "Graphify  (candidate match for RESOURCE-LIST 'Graphiphy')"
+    class: knowledge-tool
+    priority: MEDIUM
+    activation: invoke
+    confidence: verified-local
+    installed: true
+    notes: >
+      RESOURCE-LIST.md §8 asks the engine to identify the exact intended
+      resource behind "Graphiphy" without inventing an integration. A real,
+      installed skill named `graphify` exists on this machine
+      (~/.claude/skills/graphify/SKILL.md): "any input -> knowledge graph ->
+      clustered communities -> static Ontology Studio + JSON + audit report".
+      That is a plausible — but UNCONFIRMED — match. Treated as an optional
+      knowledge-graph backend for KNOWLEDGE/: useful for relationship
+      analysis across sources and patterns. The engine never depends on it.
+    detection:
+      - {kind: claude_skill, name: "graphify"}
+      - {kind: file, name: "~/.claude/skills/graphify/SKILL.md"}
+    routes: [knowledge-graph, pattern-relationships, source-relationships]
+    fallback: "INDEX/uiux.db graph tables + KNOWLEDGE/ wikilinks"
+
+# ===========================================================================
+# 3. LIBRARIES  (implementation dependencies; install only when chosen)
+# ===========================================================================
+libraries:
+
+  framer-motion:
+    display_name: "Framer Motion / Motion for React"
+    class: library
+    activation: depend
+    confidence: verified-remote            # motion.dev verified 2026-09
+    package: "motion"
+    alt_package: "framer-motion"
+    site: "https://motion.dev"
+    ecosystem: [react, js, vue]
+    verified: "2026-09: motion.dev live - 'Motion (prev Framer Motion)', MIT, React/JS/Vue. On npm, `motion` is the canonical package (v13.x); `framer-motion` still exists and is depended on by motion. For NEW projects install `motion`."
+    capabilities:
+      - declarative-component-animation
+      - layout-animation
+      - shared-layout-transitions
+      - presence-exit-animation
+      - gesture-hover-tap-drag
+      - spring-physics
+      - scroll-linked-values
+      - variants-orchestration
+    use_when:
+      - "React component enters/exits or changes layout"
+      - "Gesture-driven micro-interactions"
+      - "Page/route transitions inside a React router"
+    avoid_when:
+      - "Non-React project"
+      - "A CSS transition already solves it (cheaper, no JS cost)"
+      - "Long timeline choreography across unrelated DOM -> prefer GSAP"
+    cost_note: "Adds JS to the bundle; prefer CSS for single-property state changes."
+    verify: ["for existing projects that already use framer-motion, keep the installed alias instead of migrating mid-feature"]
+
+  gsap:
+    display_name: "GSAP (GreenSock Animation Platform)"
+    class: library
+    activation: depend
+    confidence: high-confidence
+    package: "gsap"
+    site: "https://gsap.com"
+    ecosystem: [vanilla, react, vue, svelte]
+    capabilities:
+      - timeline-sequencing
+      - scroll-trigger-choreography
+      - pin-and-scrub
+      - complex-easing
+      - svg-and-canvas-animation
+      - text-splitting
+      - high-performance-transform-batching
+    use_when:
+      - "Scroll-driven narrative with pinned sections"
+      - "Multi-element timeline with precise offsets"
+      - "Framework-agnostic or non-React project"
+    avoid_when:
+      - "A single hover state or fade"
+      - "Task-oriented app surfaces where motion is decoration"
+    cost_note: "Powerful and heavy; import only the plugins actually used."
+    verify: ["current licence terms and which plugins are free for commercial use"]
+
+  three:
+    display_name: "Three.js"
+    class: library
+    activation: depend
+    confidence: verified-remote            # threejs.org verified 2026-09
+    package: "three"
+    site: "https://threejs.org"
+    ecosystem: [vanilla, react-via-r3f]
+    verified: "2026-09: threejs.org live; current release line r185 on GitHub releases."
+    capabilities:
+      - webgl-scene-graph
+      - cameras-lights-materials
+      - gltf-model-loading
+      - post-processing
+      - custom-shader-materials
+      - raycasting-interaction
+    use_when:
+      - "Genuine 3D content: spatial data, product inspection, configurators"
+      - "Custom shader surfaces that cannot be faked with CSS/SVG"
+    avoid_when:
+      - "Decoration that a static image or CSS gradient would deliver"
+      - "Low-power/battery-sensitive primary audience"
+      - "Content-critical text (never render body copy in WebGL)"
+    cost_note: "Large bundle + GPU cost. Requires poster fallback and DPR clamp."
+
+  react-three-fiber:
+    display_name: "React Three Fiber"
+    class: library
+    activation: depend
+    confidence: high-confidence
+    package: "@react-three/fiber"
+    companions: ["@react-three/drei"]
+    site: "https://r3f.docs.pmnd.rs"
+    ecosystem: [react]
+    requires: [three]
+    capabilities:
+      - react-reconciler-for-threejs
+      - declarative-scene-composition
+      - hooks-driven-render-loop
+      - suspense-based-asset-loading
+    use_when: ["3D inside an existing React app", "3D state shared with React UI"]
+    avoid_when: ["Non-React project", "One-off canvas with no React interplay"]
+
+  shadergradient:
+    display_name: "ShaderGradient"
+    class: library
+    activation: depend
+    confidence: verified-remote            # shadergradient.co + npm verified 2026-09
+    package: "@shadergradient/react"
+    site: "https://www.shadergradient.co"
+    ecosystem: [react, framer]
+    requires: [three, react-three-fiber]
+    verified: "2026-09: shadergradient.co live ('moving gradients on Framer, Figma and React'); npm package `@shadergradient/react` v2.4.20, MIT, author ruucm, React 18/19 peer deps."
+    capabilities:
+      - animated-shader-gradient-background
+      - parameterised-colour-and-motion
+    use_when: ["Ambient brand depth behind low-density content"]
+    avoid_when:
+      - "Behind body text or data (contrast risk)"
+      - "When a static gradient reads identically at 1/100th the cost"
+    verify: ["peer-dependency range against the project's react/three versions"]
+
+  shaders:
+    display_name: "Shaders (technique knowledge)"
+    class: library
+    activation: concept
+    confidence: verified-local
+    package: ""
+    site: "https://thebookofshaders.com"
+    verified: >
+      RESOURCE-LIST §3 lists generic shader techniques. Not a package: the
+      engine encodes them as knowledge (KNOWLEDGE/three-d/shader-techniques.md)
+      plus the router aliases shader-visuals -> [shadergradient, three].
+      Canonical learning references: The Book of Shaders, Shadertoy.
+    capabilities:
+      - fragment-shader-backgrounds
+      - procedural-noise-and-gradients
+      - displacement-and-refraction
+      - glsl-uniform-time-patterns
+    use_when:
+      - "Ambient background depth that CSS gradients cannot express"
+      - "Hero surfaces with brand-tinted motion below conscious attention"
+    avoid_when:
+      - "Behind body text or data (contrast + battery cost)"
+      - "When a static gradient or CSS animation reads identically"
+    knowledge_card: "KNOWLEDGE/three-d/shader-techniques.md"
+    cost_note: "GPU fragment cost scales with pixel count - clamp resolution and pause off-screen."
+
+  liquidglass-js:
+    display_name: "LiquidGlass.js"
+    class: library
+    activation: consult
+    confidence: unresolvable
+    package: ""
+    site: ""
+    notes: >
+      UNRESOLVED after verification (2026-09). The commonly suggested repo
+      github.com/rdev/liquid-glass returns 404 - no canonical "LiquidGlass.js"
+      package or repository exists at any checked path. Several unrelated
+      "liquid glass" libraries appeared following Apple's 2025 design
+      language; identity remains unresolved. The router must NOT install
+      anything for this entry. The *technique* (translucent layered
+      surfaces) is captured vendor-neutrally in KNOWLEDGE/ui/glass-surfaces.md,
+      and real production glass components exist in verified sources:
+      Lightswind (liquid-glass blocks) and 21st.dev. RESOURCE-LIST.md
+      explicitly warns against forcing glassmorphism where it does not fit.
+    capabilities: []
+    alternatives: [lightswind, 21st-dev]
+    verify: ["only if the requester identifies the canonical repository"]
+
+  tailwindcss:
+    display_name: "Tailwind CSS"
+    class: library
+    activation: depend
+    confidence: high-confidence
+    package: "tailwindcss"
+    site: "https://tailwindcss.com"
+    capabilities: [utility-css, design-token-mapping, responsive-variants, dark-mode-variants]
+    use_when: ["Project already uses it", "Token-driven system with fast iteration"]
+    avoid_when: ["Existing mature CSS architecture that Tailwind would fragment"]
+    note: "The engine ADAPTS to the project's existing styling approach (§23). Never introduce this into a project that has not chosen it."
+
+# ===========================================================================
+# 4. COMPONENT SOURCES  (reference + implementation ideas; never auto-fetched)
+# ===========================================================================
+component_sources:
+
+  21st-dev:
+    display_name: "21st.dev"
+    class: component-source
+    activation: consult
+    confidence: verified-remote            # verified live 2026-09
+    site: "https://21st.dev"
+    verified: "2026-09: 'The living library of interfaces' - 12000+ React components, templates, shadcn themes by 700+ design engineers. Ships AI-ready copy-paste prompts (Claude Code/Cursor/v0) + shadcn CLI installs. Free browsing, 2 copies/day without membership."
+    capabilities:
+      - react-component-registry
+      - shadcn-installable-components
+      - marketing-and-app-ui-blocks
+      - copy-paste-ai-prompts
+    interfaces: ["shadcn/registry CLI", "copy-paste prompt", "MCP server"]
+    use_for: [component-ideas, implementation-reference, production-ui-patterns]
+    safety: "Components are third-party code: restyle through the project DNA, review before installing (§38)."
+
+  react-bits:
+    display_name: "React Bits"
+    class: component-source
+    activation: consult
+    confidence: verified-remote            # verified live 2026-09
+    site: "https://reactbits.dev"
+    verified: "2026-09: loads; 'Animated UI Components For React'."
+    capabilities: [animated-react-components, interaction-patterns, copy-paste-source]
+    use_for: [animated-components, interaction-reference]
+    verify: ["licence per component when actually used"]
+
+  uiverse:
+    display_name: "Uiverse"
+    class: component-source
+    activation: consult
+    confidence: verified-remote            # domain resolves; direct fetch bot-blocked
+    site: "https://uiverse.io"
+    verified: "2026-09: domain live (HTTP 403 to automated fetch - not dead). Community HTML/CSS copy-paste elements."
+    capabilities: [css-only-ui-elements, buttons, inputs, cards, loaders, toggles]
+    use_for: [micro-interaction-ideas, css-effect-techniques]
+    caution: >
+      Community-contributed, highly stylised elements. Treat as TECHNIQUE
+      inspiration only (§ "not a mandatory visual style"). Most elements are
+      decorative-first and need accessibility work: focus states, reduced
+      motion, contrast, and real semantics before production use.
+
+  lightswind:
+    display_name: "Lightswind"
+    class: component-source
+    activation: consult
+    confidence: verified-remote            # verified live 2026-09
+    site: "https://lightswind.com"
+    verified: "2026-09: 'Lightswind UI' - 301+ animated React components, 418+ blocks (3D/WebGL, AI, liquid glass, dashboards), 5 templates. MIT for OSS parts, Pro paid tiers. npm package `lightswind` (~1.2k/wk, GitHub ~912 stars), install `npx i lightswind@latest`."
+    capabilities: [react-ui-components, animated-components, webgl-blocks, liquid-glass-blocks]
+    interfaces: ["npm: lightswind", "copy-paste blocks"]
+    use_for: [component-reference, animation-reference, glass-and-3d-block-reference]
+    caution: "Pro tiers are paid; verify licence per block. Restyle through project DNA."
+
+  three-ui:
+    display_name: "Three UI"
+    class: component-source
+    activation: consult
+    confidence: verified-remote            # loads, content JS-rendered
+    site: "https://threeui.com"
+    verified: "2026-09: loads; title 'Three.js Components, Templates & Interactive Shaders | ThreeUI'. Site is JS-rendered; deeper content unverified."
+    capabilities: [threejs-components, interactive-shaders, templates]
+    use_for: [3d-component-reference, shader-reference]
+    caution: "JS-rendered site: capabilities plausible but unverified in depth. Do not assume a relationship to three.js the library beyond its subject matter."
+
+# ===========================================================================
+# 5. INSPIRATION SOURCES  (visual research; knowledge only, never templates)
+# ===========================================================================
+inspiration_sources:
+
+  scrolltide:
+    display_name: "Scrolltide"
+    class: inspiration
+    activation: consult
+    confidence: high-confidence          # corroborated by local reference assets
+    site: "https://scrolltide.co"
+    self_description_observed: "Cinematic website prompts & templates"
+    corroboration: "21 local reference videos in INBOX/videos titled 'Scrolltide — Cinematic website prompts & templates'."
+    use_for: [scroll-interaction, motion, page-transitions, cinematic-web]
+    extract: [scroll-choreography, pin-and-release, reveal-timing, depth-layering]
+
+  getlayers:
+    display_name: "GetLayers"
+    class: inspiration
+    activation: consult
+    confidence: high-confidence          # corroborated by local reference assets
+    site: "https://getlayers.ai"
+    self_description_observed: "An AI-native library of templates"
+    corroboration: "Local reference videos titled 'GetLayers AI — …', plus '3D Scenes', 'Backgrounds', 'Sections', 'Templates' collections in INBOX/videos."
+    use_for: [design-inspiration, section-composition, background-treatments, 3d-scene-ideas]
+    extract: [section-anatomy, background-motion-intensity, composition-rhythm]
+
+  motionsites:
+    display_name: "Motionsites"
+    class: inspiration
+    activation: consult
+    confidence: verified-remote            # verified live 2026-09
+    site: "https://motionsites.ai"
+    verified: "2026-09: loads. Prompt library for Lovable/Bolt/Cursor/Claude (landing pages, heroes, 3D, animated backgrounds) + MCP server + 'Academy'. Freemium pricing."
+    use_for: [motion-heavy-site-inspiration, animation-patterns, prompt-library]
+
+  vividsites:
+    display_name: "Vividsites"
+    class: inspiration
+    activation: consult
+    confidence: verified-remote            # verified live 2026-09
+    site: "https://vividsites.app"
+    verified: "2026-09: loads. 198 cinematic prompt templates (landing pages, heroes, 3D sections, downloadable video backgrounds) in HTML/React/Three.js/WebGL2. Copy-paste prompts, some free, premium one-time; /build and /custom flows + MCP."
+    use_for: [visual-direction, creative-layouts, motion-reference, video-backgrounds]
+
+  scrolltide:
+    display_name: "Scrolltide"
+    class: inspiration
+    activation: consult
+    confidence: verified-remote            # live + corroborated by local assets
+    site: "https://scrolltide.co"
+    verified: "2026-09: loads. Curated library of 61 scroll-driven/cinematic website prompts + components targeting Claude/Cursor/v0, Next.js + Framer Motion/GSAP/Three.js output. Paid ($239 lifetime), some free templates."
+    self_description_observed: "Cinematic website prompts & templates"
+    corroboration: "21 local reference videos in INBOX/videos titled 'Scrolltide — Cinematic website prompts & templates'."
+    use_for: [scroll-interaction, motion, page-transitions, cinematic-web]
+    extract: [scroll-choreography, pin-and-release, reveal-timing, depth-layering]
+
+  getlayers:
+    display_name: "GetLayers"
+    class: inspiration
+    activation: consult
+    confidence: verified-remote            # live + corroborated by local assets
+    site: "https://getlayers.ai"
+    verified: "2026-09: loads (by textura.agency). AI-native prompt library: templates, 3D scenes, sections, backgrounds, gradients - each a copyable prompt; browser-tunable scenes/gradients; Next.js starter on GitHub; MCP server for agents; free layers + paid plans."
+    self_description_observed: "An AI-native library of templates"
+    corroboration: "Local reference videos titled 'GetLayers AI — …', plus '3D Scenes', 'Backgrounds', 'Sections', 'Templates' collections in INBOX/videos."
+    use_for: [design-inspiration, section-composition, background-treatments, 3d-scene-ideas]
+    extract: [section-anatomy, background-motion-intensity, composition-rhythm]
+
+
+
+# ===========================================================================
+# 6. KNOWLEDGE TOOLS  (concepts adopted internally; no dependency)
+# ===========================================================================
+knowledge_tools:
+
+  obsidian:
+    display_name: "Obsidian"
+    class: knowledge-tool
+    activation: concept
+    confidence: high-confidence
+    site: "https://obsidian.md"
+    adopted_concepts:
+      - "Plain-markdown knowledge cards, one idea per file"
+      - "[[wikilinks]] for typed relationships between patterns and sources"
+      - "Backlinks as an index of where a principle is applied"
+      - "Graph view thinking: patterns are nodes, sources are evidence edges"
+    implemented_as:
+      - "KNOWLEDGE/**/*.md cards with wikilinks and frontmatter"
+      - "INDEX/uiux.db tables: nodes, edges (pattern<->source<->asset)"
+      - "KNOWLEDGE/sources/<source-id>.md evidence cards"
+    dependency: none
+    note: "The engine must NOT require Obsidian. The vault is readable in it, and that is a side effect, not a coupling."
+
+# ===========================================================================
+# 7. ENGINEERING RESOURCES
+# ===========================================================================
+engineering_resources:
+
+  horizonx:
+    display_name: "Open Horizons (requested source: open-horizon-labs/skills)"
+    class: engineering-resource
+    activation: consult
+    confidence: verified-remote            # repo inspected + installed 2026-09
+    site: "https://github.com/open-horizon-labs/skills"
+    install: "npx skills add open-horizon-labs/skills -g -a claude-code -y"
+    verified: >
+      2026-09: RESOURCE-LIST §5 'Horizonx' resolved by the requester to
+      github.com/open-horizon-labs/skills - 'Agent skills for the Open
+      Horizons strategic execution framework', MIT. IMPORTANT
+      RECLASSIFICATION: this is NOT a design/visual inspiration source -
+      it is a strategic-execution harness (12 skills: /aim, /problem-space,
+      /problem-statement, /problem-weave, /solution-space, /execute,
+      /ship, /review, /dissent, /salvage, /distill, /teach-oh). Companion
+      benchmark claims 7/9 vs 1/9 hidden-pass improvement on same runner.
+      INSTALLED globally via the skills CLI (aim, problem-space,
+      problem-statement, problem-weave, solution-space, execute, ship,
+      review, dissent, salvage, distill, teach-oh present).
+    decision: >
+      Kept out of the design routing table on purpose (RESOURCE-LIST §9
+      class distinction + §1 scope guard): strategic-execution commands do
+      not inform visual/UX decisions. Useful as a project-management layer
+      around engine tasks (frame -> execute -> review -> distill), which
+      the master skill's pipeline already provides in design-specific form.
+    routes: [project-grounding, execution-discipline]
+    detection:
+      - {kind: claude_skill, name: "aim"}
+      - {kind: claude_skill, name: "problem-space"}
+      - {kind: claude_skill, name: "teach-oh"}
+
+  ecc:
+    display_name: "ECC"
+    class: engineering-resource
+    activation: consult
+    confidence: verified-local            # repo inspected + installed 2026-09
+    repo: "https://github.com/affaan-m/ECC"
+    verified: >
+      2026-09: repo inspected and INSTALLED on this machine. "The agent
+      harness performance optimization system" - MIT, ~248k stars. Provides
+      68 agents, 286 skills, 94 commands, hooks, memory, continuous
+      learning, AgentShield scanning. Install performed:
+      `npx ecc-universal install --profile minimal --target claude`
+      (488 file operations into ~/.claude: 22 rule packs under rules/ecc,
+      50 skills flattened into ~/.claude/skills, agents, commands, memory
+      skill). Hooks were deliberately NOT installed (no --enable-hooks) so
+      Claude's settings.json stays untouched. ECC docs warn against stacking
+      install methods (plugin + manual = duplicates).
+    decision: >
+      Installed at the requester's choice (minimal profile, no hooks).
+      Scope guard from RESOURCE-LIST.md §1 still applies: ECC's engineering
+      workflow rules do NOT override UI/UX decision logic - the priority
+      hierarchy (§4) keeps engine + project requirements above them.
+    routes: [agent-workflow-ideas, engineering-principles]
+    scope_guard: "Engineering workflow rules must NOT leak into UI/UX decision logic."
+    detection:
+      - {kind: ecc_install, name: "ecc"}
+
+# ===========================================================================
+# 8. ROUTER DECISION TABLE
+# Need -> ordered candidate resources. First AVAILABLE + APPROPRIATE wins.
+# "internal" always exists and always terminates the chain, so the engine can
+# never be blocked by a missing external resource.
+# ===========================================================================
+routing:
+  design-system-generation: [ui-ux-pro-max, internal]
+  visual-direction:         [taste, internal]
+  motion-spec:              [motion-design, internal]
+  implementation:           [frontend-design, internal]
+  advanced-scroll-motion:   [gsap]
+  react-layout-motion:      [framer-motion]
+  react-3d:                 [react-three-fiber, three]
+  raw-webgl:                [three]
+  shader-visuals:           [shadergradient, three, shaders]
+  glass-surface:            [internal]        # liquidglass-js unresolved; see lightswind/21st-dev
+  component-reference:      [21st-dev, react-bits, lightswind, uiverse]
+  micro-interaction-css:    [uiverse, react-bits]
+  scroll-inspiration:       [scrolltide, motionsites]
+  visual-inspiration:       [getlayers, vividsites, motionsites]
+  knowledge-graph:          [graphify, internal]
+  local-reference-search:   [internal]
+
+# Guardrails the router applies before it activates anything.
+guards:
+  - "Never activate a library the project cannot support (framework mismatch)."
+  - "Never introduce a dependency when CSS or SVG meets the requirement."
+  - "Never activate 3D/shader resources for text- or data-critical regions."
+  - "Never let a component source dictate the project's visual language."
+  - "Never fetch or execute remote code as part of a pipeline step (§38)."
+  - "Resources with confidence `unknown` are reportable, not activatable."
+  - "Visual references are priority 12 of 12: they lose every conflict (§4)."
+

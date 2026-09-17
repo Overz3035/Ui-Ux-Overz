@@ -1,0 +1,38 @@
+{
+  "id": "source-vira-control-mapping-system--2862",
+  "label": "images",
+  "kind": "inferred",
+  "source_confidence": "medium",
+  "inbox_path": "C:\\Users\\SRS\\Desktop\\UIUX_ENGINE\\INBOX\\images",
+  "counts": {
+    "assets": 2,
+    "images": 2,
+    "videos": 0
+  },
+  "visual_language": [
+    "map_gis",
+    "layout_pattern_unknown",
+    "dashboard",
+    "vivid_saturated",
+    "visual_style_unknown"
+  ],
+  "motion_language": [],
+  "technology_hints": [],
+  "usage_categories": [],
+  "assets": [
+    {
+      "id": 68,
+      "type": "image",
+      "original_name": "VIRA_CONTROL_mapping_system_display_202609032147.jpeg",
+      "generated_name": "dashboard-vivid-saturated-map-canvas-003.jpeg",
+      "reference_path": "C:\\Users\\SRS\\Desktop\\UIUX_ENGINE\\REFERENCES\\images\\dashboard-vivid-saturated-map-canvas-003.jpeg"
+    },
+    {
+      "id": 69,
+      "type": "image",
+      "original_name": "VIRA_CONTROL_mapping_system_display_202609032159.jpeg",
+      "generated_name": "dashboard-map-canvas-004.jpeg",
+      "reference_path": "C:\\Users\\SRS\\Desktop\\UIUX_ENGINE\\REFERENCES\\images\\dashboard-map-canvas-004.jpeg"
+    }
+  ]
+}

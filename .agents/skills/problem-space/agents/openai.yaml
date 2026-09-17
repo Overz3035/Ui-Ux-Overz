@@ -1,0 +1,4 @@
+interface:
+  display_name: "Problem Space"
+  short_description: "Map objectives, constraints, and assumptions"
+  default_prompt: "Use $problem-space to map the objective, constraints, assumptions, and evidence before choosing a solution."

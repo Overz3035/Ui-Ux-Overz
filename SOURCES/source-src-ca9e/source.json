@@ -1,0 +1,17 @@
+{
+  "id": "source-src-ca9e",
+  "label": "images",
+  "kind": "inferred",
+  "source_confidence": "medium",
+  "inbox_path": "C:\\Users\\SRS\\Desktop\\UIUX_ENGINE\\INBOX\\images",
+  "counts": {
+    "assets": 0,
+    "images": 0,
+    "videos": 0
+  },
+  "visual_language": [],
+  "motion_language": [],
+  "technology_hints": [],
+  "usage_categories": [],
+  "assets": []
+}

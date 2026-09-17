@@ -1,0 +1,4 @@
+interface:
+  display_name: "Problem Statement"
+  short_description: "Frame the problem before choosing solutions"
+  default_prompt: "Use $problem-statement to define a clear, testable framing before exploring solutions."

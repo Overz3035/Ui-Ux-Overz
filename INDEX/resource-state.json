@@ -1,0 +1,346 @@
+{
+  "generated_at": "2026-09-05T19:15:55Z",
+  "resources": {
+    "ui-ux-pro-max": {
+      "installed": true,
+      "detail": "C:\\Users\\SRS\\.kilo\\skills\\ui-ux-pro-max\\SKILL.md",
+      "class": "active-engine",
+      "activation": "invoke",
+      "confidence": "verified-local",
+      "site": null,
+      "repo": null
+    },
+    "frontend-design": {
+      "installed": true,
+      "detail": "C:\\Users\\SRS\\.kilo\\skills\\frontend-design\\SKILL.md",
+      "class": "skill",
+      "activation": "load",
+      "confidence": "verified-local",
+      "site": null,
+      "repo": null
+    },
+    "taste": {
+      "installed": true,
+      "detail": "C:\\Users\\SRS\\.kilo\\skills\\design-taste-frontend\\SKILL.md",
+      "class": "skill",
+      "activation": "load",
+      "confidence": "verified-local",
+      "site": null,
+      "repo": null
+    },
+    "motion-design": {
+      "installed": true,
+      "detail": "C:\\Users\\SRS\\.kilo\\skills\\motion-design\\SKILL.md",
+      "class": "skill",
+      "activation": "load",
+      "confidence": "verified-local",
+      "site": null,
+      "repo": null
+    },
+    "web-design-guidelines": {
+      "installed": true,
+      "detail": "C:\\Users\\SRS\\.kilo\\skills\\web-design-guidelines\\SKILL.md",
+      "class": "skill",
+      "activation": "load",
+      "confidence": "verified-local",
+      "site": null,
+      "repo": null
+    },
+    "emil-kowalski": {
+      "installed": true,
+      "detail": "C:\\Users\\SRS\\.kilo\\skills\\emil-design-eng\\SKILL.md",
+      "class": "skill",
+      "activation": "load",
+      "confidence": "verified-local",
+      "site": "https://github.com/emilkowalski/skills",
+      "repo": null
+    },
+    "genjutsu": {
+      "installed": true,
+      "detail": "C:\\Users\\SRS\\.kilo\\skills\\cast\\SKILL.md",
+      "class": "skill",
+      "activation": "load",
+      "confidence": "verified-local",
+      "site": "https://genjutsu.athevon.dev",
+      "repo": "https://github.com/AThevon/genjutsu"
+    },
+    "graphify": {
+      "installed": true,
+      "detail": "C:\\Users\\SRS\\.claude\\skills\\graphify\\SKILL.md",
+      "class": "knowledge-tool",
+      "activation": "invoke",
+      "confidence": "verified-local",
+      "site": null,
+      "repo": null
+    },
+    "framer-motion": {
+      "installed": false,
+      "detail": "no probes declared",
+      "class": "library",
+      "activation": "depend",
+      "confidence": "verified-remote",
+      "site": "https://motion.dev",
+      "repo": null
+    },
+    "gsap": {
+      "installed": false,
+      "detail": "no probes declared",
+      "class": "library",
+      "activation": "depend",
+      "confidence": "high-confidence",
+      "site": "https://gsap.com",
+      "repo": null
+    },
+    "three": {
+      "installed": false,
+      "detail": "no probes declared",
+      "class": "library",
+      "activation": "depend",
+      "confidence": "verified-remote",
+      "site": "https://threejs.org",
+      "repo": null
+    },
+    "react-three-fiber": {
+      "installed": false,
+      "detail": "no probes declared",
+      "class": "library",
+      "activation": "depend",
+      "confidence": "high-confidence",
+      "site": "https://r3f.docs.pmnd.rs",
+      "repo": null
+    },
+    "shadergradient": {
+      "installed": false,
+      "detail": "no probes declared",
+      "class": "library",
+      "activation": "depend",
+      "confidence": "verified-remote",
+      "site": "https://www.shadergradient.co",
+      "repo": null
+    },
+    "shaders": {
+      "installed": false,
+      "detail": "no probes declared",
+      "class": "library",
+      "activation": "concept",
+      "confidence": "verified-local",
+      "site": "https://thebookofshaders.com",
+      "repo": null
+    },
+    "liquidglass-js": {
+      "installed": false,
+      "detail": "no probes declared",
+      "class": "library",
+      "activation": "consult",
+      "confidence": "unresolvable",
+      "site": "",
+      "repo": null
+    },
+    "tailwindcss": {
+      "installed": false,
+      "detail": "no probes declared",
+      "class": "library",
+      "activation": "depend",
+      "confidence": "high-confidence",
+      "site": "https://tailwindcss.com",
+      "repo": null
+    },
+    "21st-dev": {
+      "installed": false,
+      "detail": "no probes declared",
+      "class": "component-source",
+      "activation": "consult",
+      "confidence": "verified-remote",
+      "site": "https://21st.dev",
+      "repo": null
+    },
+    "react-bits": {
+      "installed": false,
+      "detail": "no probes declared",
+      "class": "component-source",
+      "activation": "consult",
+      "confidence": "verified-remote",
+      "site": "https://reactbits.dev",
+      "repo": null
+    },
+    "uiverse": {
+      "installed": false,
+      "detail": "no probes declared",
+      "class": "component-source",
+      "activation": "consult",
+      "confidence": "verified-remote",
+      "site": "https://uiverse.io",
+      "repo": null
+    },
+    "lightswind": {
+      "installed": false,
+      "detail": "no probes declared",
+      "class": "component-source",
+      "activation": "consult",
+      "confidence": "verified-remote",
+      "site": "https://lightswind.com",
+      "repo": null
+    },
+    "three-ui": {
+      "installed": false,
+      "detail": "no probes declared",
+      "class": "component-source",
+      "activation": "consult",
+      "confidence": "verified-remote",
+      "site": "https://threeui.com",
+      "repo": null
+    },
+    "scrolltide": {
+      "installed": false,
+      "detail": "no probes declared",
+      "class": "inspiration",
+      "activation": "consult",
+      "confidence": "verified-remote",
+      "site": "https://scrolltide.co",
+      "repo": null
+    },
+    "getlayers": {
+      "installed": false,
+      "detail": "no probes declared",
+      "class": "inspiration",
+      "activation": "consult",
+      "confidence": "verified-remote",
+      "site": "https://getlayers.ai",
+      "repo": null
+    },
+    "motionsites": {
+      "installed": false,
+      "detail": "no probes declared",
+      "class": "inspiration",
+      "activation": "consult",
+      "confidence": "verified-remote",
+      "site": "https://motionsites.ai",
+      "repo": null
+    },
+    "vividsites": {
+      "installed": false,
+      "detail": "no probes declared",
+      "class": "inspiration",
+      "activation": "consult",
+      "confidence": "verified-remote",
+      "site": "https://vividsites.app",
+      "repo": null
+    },
+    "obsidian": {
+      "installed": false,
+      "detail": "no probes declared",
+      "class": "knowledge-tool",
+      "activation": "concept",
+      "confidence": "high-confidence",
+      "site": "https://obsidian.md",
+      "repo": null
+    },
+    "horizonx": {
+      "installed": true,
+      "detail": "C:\\Users\\SRS\\.kilo\\skills\\aim\\SKILL.md",
+      "class": "engineering-resource",
+      "activation": "consult",
+      "confidence": "verified-remote",
+      "site": "https://github.com/open-horizon-labs/skills",
+      "repo": null
+    },
+    "ecc": {
+      "installed": true,
+      "detail": "installed (profile=?)",
+      "class": "engineering-resource",
+      "activation": "consult",
+      "confidence": "verified-local",
+      "site": null,
+      "repo": "https://github.com/affaan-m/ECC"
+    }
+  },
+  "versions": {
+    "engine": "1.0.0",
+    "analyzer": "1.0.0",
+    "index": "1",
+    "schema": "1",
+    "naming": "1",
+    "embedding": "1",
+    "knowledge": "1"
+  },
+  "checks": [
+    {
+      "name": "python",
+      "ok": true,
+      "detail": "3.13.9",
+      "required": true
+    },
+    {
+      "name": "pillow",
+      "ok": true,
+      "detail": "11.2.1",
+      "required": true
+    },
+    {
+      "name": "numpy",
+      "ok": true,
+      "detail": "2.3.5",
+      "required": true
+    },
+    {
+      "name": "pyyaml",
+      "ok": true,
+      "detail": "6.0.3",
+      "required": false
+    },
+    {
+      "name": "ffmpeg",
+      "ok": true,
+      "detail": "C:\\ffmpeg\\bin\\ffmpeg.exe",
+      "required": false
+    },
+    {
+      "name": "ffprobe",
+      "ok": true,
+      "detail": "C:\\ffmpeg\\bin\\ffprobe.exe",
+      "required": false
+    },
+    {
+      "name": "tesseract",
+      "ok": true,
+      "detail": "C:\\Program Files\\Tesseract-OCR\\tesseract.exe",
+      "required": false
+    },
+    {
+      "name": "pytesseract",
+      "ok": true,
+      "detail": "0.3.13",
+      "required": false
+    },
+    {
+      "name": "sentence-transformers",
+      "ok": false,
+      "detail": "5.6.0",
+      "required": false
+    },
+    {
+      "name": "torch",
+      "ok": true,
+      "detail": "2.13.0",
+      "required": false
+    },
+    {
+      "name": "directories",
+      "ok": true,
+      "detail": "all present",
+      "required": false
+    },
+    {
+      "name": "index",
+      "ok": true,
+      "detail": "74 images, 75 videos, 9 sources, 12 patterns (schema v1)",
+      "required": false
+    },
+    {
+      "name": "config",
+      "ok": true,
+      "detail": "mode=adaptive, tools pinned: ffmpeg, ffprobe",
+      "required": false
+    }
+  ]
+}

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Distill"
+  short_description: "Curate accumulated learning and guardrails"
+  default_prompt: "Use $distill to review accumulated learning and propose what to keep, compact, promote, or dismiss."
